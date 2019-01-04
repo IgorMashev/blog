@@ -1,0 +1,5 @@
+name: Blog
+description: Module for custom code in site.
+type: module
+core: 8.x
+package: Blog

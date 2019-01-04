@@ -1,0 +1,23 @@
+uuid: 354039a2-10b2-4681-b332-820b4dcfb592
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  384e630a-51d1-4451-928a-0ee8b2c9a7d6:
+    id: node_type
+    bundles:
+      blog: blog
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 384e630a-51d1-4451-928a-0ee8b2c9a7d6
+selection_logic: and
+weight: -5
+relationships: {  }

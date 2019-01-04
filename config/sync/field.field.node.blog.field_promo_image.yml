@@ -1,0 +1,28 @@
+uuid: d392513f-65ad-4031-8f1f-b9c1afe54cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promo_image
+    - media.type.image
+    - node.type.blog
+id: node.blog.field_promo_image
+field_name: field_promo_image
+entity_type: node
+bundle: blog
+label: 'Promo image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

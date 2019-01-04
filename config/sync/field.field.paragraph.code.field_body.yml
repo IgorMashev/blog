@@ -1,0 +1,24 @@
+uuid: 83a5f389-e8ae-4029-9676-b40dd06f5a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.code
+  module:
+    - text
+id: paragraph.code.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: code
+label: Body
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: "```php\r\n\r\n```"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long
