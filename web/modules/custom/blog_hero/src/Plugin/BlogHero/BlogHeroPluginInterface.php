@@ -56,7 +56,14 @@ interface BlogHeroPluginInterface extends PluginInspectionInterface {
    *
    * Keys of array is represents their type and value is file URI.
    *
-   * @return array
+   * @code
+   * @return [
+   *  'video/mp4' => 'drupal-for-beginner'.mp4,
+   *  'video/ogg' => 'drupal-for-beginner'.ogg,
+   *  'video/webm' => 'drupal-for-beginner'.webm,
+   * ];
+   * @encode
+   *
    *    An array with video URI's.
    */
   public function getHeroVideo();
