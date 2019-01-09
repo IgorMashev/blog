@@ -1,9 +1,0 @@
-uuid: 4dbd95be-ea81-4f6b-aefd-959080f4bcb3
-langcode: en
-status: true
-dependencies: {  }
-id: video_youtube
-label: 'Video YouTube'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

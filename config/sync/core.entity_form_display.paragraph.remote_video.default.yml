@@ -1,0 +1,34 @@
+uuid: 1b8bb8a4-15c2-4d19-9cfe-8240e67c18ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.remote_video.field_remote_video
+    - field.field.paragraph.remote_video.field_title
+    - paragraphs.paragraphs_type.remote_video
+id: paragraph.remote_video.default
+targetEntityType: paragraph
+bundle: remote_video
+mode: default
+content:
+  field_remote_video:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

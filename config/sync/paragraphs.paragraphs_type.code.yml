@@ -1,9 +1,17 @@
 uuid: 5f69440b-4d55-414b-b98a-baadd63cc085
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: code
 label: Code
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_paragraph_class:
+    enabled: true
+  blog_paragraphs_paragraph_style:
+    enabled: true
+  blog_paragraphs_paragraph_title:
+    enabled: true

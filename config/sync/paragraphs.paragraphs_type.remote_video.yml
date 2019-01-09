@@ -1,0 +1,19 @@
+uuid: b1932471-cef3-4b09-84ba-8b3a70e09219
+langcode: en
+status: true
+dependencies:
+  module:
+    - blog_paragraphs
+id: remote_video
+label: 'Remote video'
+icon_uuid: null
+description: ''
+behavior_plugins:
+  blog_paragraphs_paragraph_class:
+    enabled: true
+  blog_paragraphs_paragraph_style:
+    enabled: true
+  blog_paragraphs_paragraph_title:
+    enabled: true
+  blog_paragraphs_remote_video:
+    enabled: true

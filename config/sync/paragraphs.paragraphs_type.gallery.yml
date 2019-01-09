@@ -1,9 +1,19 @@
 uuid: 19318014-7455-4dba-9783-f24972911c1a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: gallery
 label: Gallery
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_gallery:
+    enabled: true
+  blog_paragraphs_paragraph_class:
+    enabled: true
+  blog_paragraphs_paragraph_style:
+    enabled: true
+  blog_paragraphs_paragraph_title:
+    enabled: true

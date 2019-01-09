@@ -1,9 +1,17 @@
 uuid: df97eb29-182f-432f-a6b9-cc19b833e7a9
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: image
 label: Image
 icon_uuid: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_paragraph_class:
+    enabled: true
+  blog_paragraphs_paragraph_style:
+    enabled: true
+  blog_paragraphs_paragraph_title:
+    enabled: true
