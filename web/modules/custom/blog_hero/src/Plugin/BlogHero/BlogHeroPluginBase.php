@@ -82,7 +82,7 @@ abstract class BlogHeroPluginBase extends PluginBase implements BlogHeroPluginIn
       $container->get('request_stack')->getCurrentRequest(),
       $container->get('current_route_match'),
       $container->get('title_resolver'),
-      $container->get('entity_type_manager')
+      $container->get('entity_type.manager')
     );
   }
 
@@ -144,7 +144,7 @@ abstract class BlogHeroPluginBase extends PluginBase implements BlogHeroPluginIn
    * {@inheritdoc}
    */
   public function getHeroTitle() {
-    return $this->getpageTitle();
+    return $this->getPageTitle();
   }
 
   /**

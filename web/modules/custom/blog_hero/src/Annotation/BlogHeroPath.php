@@ -56,5 +56,5 @@ class BlogHeroPath extends Plugin {
    *
    * @var int
    */
-  public $weigth;
+  public $weight;
 }

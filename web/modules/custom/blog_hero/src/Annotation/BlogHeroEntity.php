@@ -54,5 +54,5 @@ class BlogHeroEntity extends Plugin {
    *
    * @var int
    */
-  public $weigth;
+  public $weight;
 }

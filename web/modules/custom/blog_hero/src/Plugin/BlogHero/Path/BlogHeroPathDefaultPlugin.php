@@ -3,11 +3,11 @@
 namespace Drupal\blog_hero\Plugin\BlogHero\Path;
 
 /**
- * Dedault plugin which will be used if non of others met their requirements.
+ * Default plugin which will be used if non of others met their requirements.
  *
  * @BlogHeroPath(
  *  id = "blog_hero_path_default",
- *  match_path = {*},
+ *  match_path = {"*"},
  *  weight = -100,
  * )
  */

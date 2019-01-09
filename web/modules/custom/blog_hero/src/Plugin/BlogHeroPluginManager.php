@@ -62,7 +62,7 @@ class BlogHeroPluginManager extends DefaultPluginManager {
     // E.g. entity => Entity, path => Path.
     $type_camelized = Container::camelize($type);
     $subdir = "Plugin/BlogHero/{$type_camelized}";
-    $plugin_interface = "Drupal\blog_hero\Plugin\{$type_camelized}\BlogHero{$type_camelized}PluginInterface";
+    $plugin_interface = "Drupal\blog_hero\Plugin\BlogHero\{$type_camelized}\BlogHero{$type_camelized}PluginInterface";
     $plugin_definition_annotation_name = "Drupal\blog_hero\Annotation\BlogHero{$type_camelized}";
 
     parent::__construct($subdir, $namespaces, $module_handler, $plugin_interface, $plugin_definition_annotation_name);
@@ -78,14 +78,14 @@ class BlogHeroPluginManager extends DefaultPluginManager {
         'match_type' => 'listed',
       ];
     }
-    $this->alterInfo("blog_hero_{$type_camelized}");
+    $this->alterInfo("blog_hero_{$type}");
 
     $this->setCacheBackend($cache_backend, "blog_hero:{$type}");
     $this->factory = new ContainerFactory($this->getDiscovery());
   }
 
   /**
-   * Get suitable plugins for current request.
+   * Gets suitable plugins for current request.
    */
   public function getSuitablePlugins() {
     $plugin_type = $this->defaults['plugin_type'];
@@ -117,19 +117,18 @@ class BlogHeroPluginManager extends DefaultPluginManager {
     if ($entity) {
       foreach ($this->getDefinitions() as $plugin_id => $plugin) {
         if ($plugin['enabled']) {
-          $same_entity_type = $plugin['entity_type'] == $entity->getEntityTypeId();
+          $same_entity_type = $plugin['plugin_type'] == $entity->getEntityTypeId();
           $needed_bundle = in_array($entity->bundle(), $plugin['entity_bundle']) || in_array('*', $plugin['entity_bundle']);
 
           if ($same_entity_type && $needed_bundle) {
             $plugins[$plugin_id] = $plugin;
-            $plugins[$plugin_id]['_entity'] = $entity;
-
+            $plugins[$plugin_id]['entity'] = $entity;
           }
         }
       }
     }
 
-    uasort($plagins, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
+    uasort($plugins, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
     return $plugins;
   }
 
@@ -149,15 +148,15 @@ class BlogHeroPluginManager extends DefaultPluginManager {
         switch ($plugin['match_type']) {
           case 'listed':
           default:
-            $match_type = 0;
+            $math_type = 0;
             break;
 
           case 'unlisted':
-            $match_type = 1;
+            $math_type = 1;
             break;
         }
 
-        $is_plugin_needed = ($is_match_path xor $match_type);
+        $is_plugin_needed = ($is_match_path xor $math_type);
 
         if ($is_plugin_needed) {
           $plugins[$plugin_id] = $plugin;
@@ -165,7 +164,7 @@ class BlogHeroPluginManager extends DefaultPluginManager {
       }
     }
 
-    uasort($plagins, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
+    uasort($plugins, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
     return $plugins;
   }
 }
