@@ -1,0 +1,7 @@
+.header {
+  position: relative;
+  &__top {
+    @include media-container();
+    lost-flex-container: row;
+  }
+}

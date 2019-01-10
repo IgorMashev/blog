@@ -1,0 +1,26 @@
+uuid: 8f6f473b-4523-4841-8c5c-bcdcc1ece2d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - blog_hero
+  theme:
+    - blogger
+id: blogger_bloghero
+theme: blogger
+region: content
+weight: -7
+provider: null
+plugin: blog_hero
+settings:
+  id: blog_hero
+  label: 'Blog Hero'
+  provider: blog_hero
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
