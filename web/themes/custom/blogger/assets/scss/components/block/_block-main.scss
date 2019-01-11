@@ -1,8 +1,7 @@
 .block-main {
-  position: relative;
 
   &__menu {
-    @include media-container();
+    @include list-unstyled;
     lost-flex-container: raw;
   }
 }
