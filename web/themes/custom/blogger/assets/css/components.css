@@ -5,6 +5,31 @@
   display: flex;
   flex-flow: row wrap; }
 
+.block-main__menu-item {
+  z-index: 10;
+  margin-right: 16px; }
+  .block-main__menu-item:first-child {
+    margin-left: 16px; }
+  .block-main__menu-item:last-child {
+    margin-right: 0; }
+
+.block-main__menu-item-link {
+  display: block;
+  color: #6b401a;
+  font-size: 18px;
+  line-height: 42px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  .block-main__menu-item-link:hover {
+    color: #cf8732; }
+
+.block-system-branding-block__site-name {
+  z-index: 10;
+  display: block;
+  color: #cf8732;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
+
 @font-face {
   font-family: "Material Design Icons";
   src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=2.8.94");
@@ -668,7 +693,10 @@ a.tabledrag-handle .handle {
     padding-right: 15px;
     padding-left: 15px;
     display: flex;
-    flex-flow: row wrap; }
+    flex-flow: row wrap;
+    position: relative;
+    align-content: center;
+    z-index: 20; }
     @media (min-width: 468px) {
       .header__top {
         width: 420px;
@@ -701,19 +729,85 @@ a.tabledrag-handle .handle {
       .header__top {
         padding-right: 15px;
         padding-left: 15px; } }
+  .header__block-system-branding-block {
+    margin-right: 30px; }
 
 .blog-hero {
   position: relative;
   z-index: 0;
-  margin-top: -24px;
+  margin-top: -42px;
   height: 600px;
   overflow: hidden; }
   .blog-hero__content {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
     position: relative;
-    z-index: 10; }
+    z-index: 10;
+    top: 200px; }
+    @media (min-width: 468px) {
+      .blog-hero__content {
+        width: 420px;
+        max-width: 100%; } }
+    @media (min-width: 768px) {
+      .blog-hero__content {
+        width: 720px;
+        max-width: 100%; } }
+    @media (min-width: 992px) {
+      .blog-hero__content {
+        width: 960px;
+        max-width: 100%; } }
+    @media (min-width: 1200px) {
+      .blog-hero__content {
+        width: 1140px;
+        max-width: 100%; } }
+    @media (min-width: 468px) {
+      .blog-hero__content {
+        padding-right: 15px;
+        padding-left: 15px; } }
+    @media (min-width: 768px) {
+      .blog-hero__content {
+        padding-right: 15px;
+        padding-left: 15px; } }
+    @media (min-width: 992px) {
+      .blog-hero__content {
+        padding-right: 15px;
+        padding-left: 15px; } }
+    @media (min-width: 1200px) {
+      .blog-hero__content {
+        padding-right: 15px;
+        padding-left: 15px; } }
+  .blog-hero__title {
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    font-size: 48px;
+    font-weight: bold;
+    top: 175px;
+    margin: auto; }
+  .blog-hero__subtitle {
+    color: black;
+    text-shadow: 1px 1px 0 rgba(254, 254, 254, 0.3);
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 600px; }
   .blog-hero__image {
     position: absolute;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .blog-hero::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(245, 160, 0, 0.3) 0%, rgba(100, 245, 140, 0.1) 100%);
+    background-repeat: repeat-x; }
 
 /*# sourceMappingURL=maps/components.css.map */

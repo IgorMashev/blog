@@ -2,7 +2,7 @@
 
 namespace Drupal\blog_hero\Annotation;
 
-use drupal\Component\Annotation\Plugin;
+use Drupal\Component\Annotation\Plugin;
 
 /**
  * @BlogHeroEntity annotation.

@@ -3,5 +3,12 @@
   &__top {
     @include media-container();
     lost-flex-container: row;
+    position: relative;
+    align-content: center;
+    z-index: 20;
+  }
+
+  &__block-system-branding-block {
+    margin-right: 30px;
   }
 }

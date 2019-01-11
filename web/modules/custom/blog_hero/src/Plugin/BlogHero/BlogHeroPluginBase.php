@@ -2,7 +2,6 @@
 
 namespace Drupal\blog_hero\Plugin\BlogHero;
 
-
 use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\Controller\TitleResolverInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -62,7 +61,7 @@ abstract class BlogHeroPluginBase extends PluginBase implements BlogHeroPluginIn
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *    The entity type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, Request $request, CurrentRouteMatch $current_route_match, TitleResolverInterface $title_resolver, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(array $configuration, string $plugin_id, $plugin_definition, Request $request, CurrentRouteMatch $current_route_match, TitleResolverInterface $title_resolver, EntityTypeManagerInterface $entity_type_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->request = $request;

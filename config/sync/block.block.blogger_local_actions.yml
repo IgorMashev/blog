@@ -9,7 +9,7 @@ _core:
 id: blogger_local_actions
 theme: blogger
 region: content
-weight: -3
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

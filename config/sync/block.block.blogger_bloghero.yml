@@ -1,6 +1,6 @@
 uuid: 8f6f473b-4523-4841-8c5c-bcdcc1ece2d0
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - block_visibility_groups
@@ -10,7 +10,7 @@ dependencies:
 id: blogger_bloghero
 theme: blogger
 region: content
-weight: -7
+weight: -2
 provider: null
 plugin: blog_hero
 settings:

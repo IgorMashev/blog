@@ -10,7 +10,7 @@ use Drupal\blog_hero\Plugin\BlogHero\Entity\BlogHeroEntityPluginBase;
  * @BlogHeroEntity(
  *   id = "blog_node_blog",
  *   entity_type = "node",
- *   entity_bundle = {"blog"},
+ *   entity_bundle = {"blog"}
  *  )
  */
 class NodeBlog extends BlogHeroEntityPluginBase {
@@ -31,7 +31,7 @@ class NodeBlog extends BlogHeroEntityPluginBase {
     /** @var  \Drupal\node\NodeInterface $node */
     $node = $this->getEntity();
     /** @var  \Drupal\media\MediaInterface $media */
-    $media = $node->get('field_image')->entity;
+    $media = $node->get('field_promo_image')->entity;
     return $media->get('field_media_image')->entity->get('uri')->value;
   }
 }

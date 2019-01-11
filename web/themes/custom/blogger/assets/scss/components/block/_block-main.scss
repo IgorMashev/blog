@@ -1,7 +1,31 @@
 .block-main {
-
   &__menu {
     @include list-unstyled;
     lost-flex-container: raw;
+  }
+
+  &__menu-item {
+    z-index:10;
+    margin-right: gap(2);
+
+    &:first-child {
+      margin-left: gap(2);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__menu-item-link {
+    display:block;
+    color: #6b401a;
+    font-size: 18px;
+    line-height: 42px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: #cf8732;
+    }
   }
 }
