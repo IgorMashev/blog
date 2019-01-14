@@ -1,0 +1,6 @@
+.main-layout {
+  @include media-container();
+  padding-top: gap(6);
+  padding-bottom: gap(6);
+
+}

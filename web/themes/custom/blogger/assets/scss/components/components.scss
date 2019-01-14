@@ -11,6 +11,7 @@
 // Blocks.
 @import "block/block-main";
 @import "block/block-system-branding-block";
+@import "block/block-footer";
 
 // UI elements.
 @import "ui/material-design-icons";
@@ -32,12 +33,12 @@
 // Form.
 
 // Node.
-@import "node/blog/node-blog-full";
-@import "node/blog/node-blog-teaser";
+@import "node/page/node-page-full";
 
 //Snippet.
 @import "snippet/header-main";
 @import "snippet/footer-main";
+@import "snippet/social-links";
 
 // Taxonomy term.
 
@@ -45,3 +46,6 @@
 @import "theme/blog-hero";
 
 // Views.
+
+// Layout
+@import "layout/main-layout";
