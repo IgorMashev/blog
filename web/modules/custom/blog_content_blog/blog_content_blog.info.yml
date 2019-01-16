@@ -1,0 +1,5 @@
+name: Blog - content blog
+type: module
+description: The custom blog for custom blog node type.
+package: blog
+core: 8.x

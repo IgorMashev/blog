@@ -6,7 +6,7 @@
 
   &__menu {
     @include list-unstyled;
-    lost-flex-container: raw;
+    lost-flex-container: row;
   }
 
   &__menu-item {

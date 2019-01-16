@@ -1,0 +1,22 @@
+.paragraph-style {
+
+  &--title-centered {
+    .paragraph-title{
+      text-align: center;
+    }
+  }
+
+  &--title-bold {
+    .paragraph-title{
+      font-weight: bold;
+    }
+  }
+
+  &--style-black {
+    color: white;
+    background: #4E4E4E;
+    padding: gap(3);
+    border-radius: 50px;
+    box-shadow: 0 0 90px #4E4E4E;
+  }
+}

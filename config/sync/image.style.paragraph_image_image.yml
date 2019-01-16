@@ -1,0 +1,15 @@
+uuid: e6002e23-6834-498e-a85c-a0de265843f8
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_image_image
+label: 'Paragraph Image Image'
+effects:
+  e8d89d9a-bdce-4877-86b0-26d11bb35e62:
+    uuid: e8d89d9a-bdce-4877-86b0-26d11bb35e62
+    id: image_scale
+    weight: 1
+    data:
+      width: 1110
+      height: null
+      upscale: false

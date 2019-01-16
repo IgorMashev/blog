@@ -10,6 +10,7 @@ module:
   block_content: 0
   block_visibility_groups: 0
   blog: 0
+  blog_content_blog: 0
   blog_hero: 0
   blog_paragraphs: 0
   breakpoint: 0

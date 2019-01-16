@@ -4,4 +4,12 @@ status: true
 dependencies: {  }
 name: paragraph_image_text_6_of_12
 label: 'Paragraph: image text 6 of 12'
-effects: {  }
+effects:
+  7f0ea755-890f-4dfe-8a81-ee63c29e5ab9:
+    uuid: 7f0ea755-890f-4dfe-8a81-ee63c29e5ab9
+    id: image_scale
+    weight: 1
+    data:
+      width: 540
+      height: null
+      upscale: false

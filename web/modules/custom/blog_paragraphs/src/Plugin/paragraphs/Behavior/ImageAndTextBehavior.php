@@ -42,6 +42,7 @@ class ImageAndTextBehavior extends ParagraphsBehaviorBase {
     $bem_block = 'paragraph-' . $paragraph->bundle() . ($view_mode == 'default' ? '' : '-' . $view_mode);
     $image_position = $paragraph->getBehaviorSetting($this->getPluginId(), 'image_position', 'left');
     $image_size = $paragraph->getBehaviorSetting($this->getPluginId(), 'image_size', '4_12');
+
     $build['#attributes']['class'][] = Html::getClass($bem_block . '--image-position-' . $image_position);
     $build['#attributes']['class'][] = Html::getClass($bem_block . '--image-size-' . $image_size);
 

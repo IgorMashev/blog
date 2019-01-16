@@ -50,3 +50,12 @@ function blog_node_view(array &$build, NodeInterface $node, EntityViewDisplayInt
     ];
   }
 }
+
+/**
+ * Implements hook_imagemagick_arguments_alter().
+ */
+function blog_imagemagick_arguments_alter(\Drupal\imagemagick\ImagemagickExecArguments $arguments, $command) {
+  $arguments->add('-sampling-factor 4:2:0');
+  $arguments->add('-interlace Plane');
+  $arguments->add('-strip');
+}

@@ -35,10 +35,22 @@
 // Node.
 @import "node/page/node-page-full";
 
+// Paragraph.
+@import "paragraph/image-and-text/paragraph-image-and-text";
+@import "paragraph/gallery/paragraph-gallery";
+@import "paragraph/code/paragraph-code";
+@import "paragraph/remote-video/paragraph-remote-video";
+@import "paragraph/remote-video-gallery/_paragraph-remote-videos-gallery";
+@import "paragraph/paragraph-style";
+
+// Media.
+@import "media/remote-video/media-remote-video";
+
+
 //Snippet.
-@import "snippet/header-main";
-@import "snippet/footer-main";
-@import "snippet/social-links";
+@import "include/header-main";
+@import "include/footer-main";
+@import "include/social-links";
 
 // Taxonomy term.
 
@@ -48,4 +60,5 @@
 // Views.
 
 // Layout
+@import "layout/app";
 @import "layout/main-layout";

@@ -1,0 +1,15 @@
+uuid: 577eed88-7e57-4acc-a06f-c832cb3650a8
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_gallery_image_3_of_12
+label: 'Paragraph Gallery Image 3 of 12'
+effects:
+  6a15ab86-2a03-4e53-9759-7490faad36f5:
+    uuid: 6a15ab86-2a03-4e53-9759-7490faad36f5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 255
+      height: 255
+      anchor: center-center

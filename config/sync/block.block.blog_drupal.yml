@@ -1,0 +1,28 @@
+uuid: c6aa58a3-9e91-48f1-b5e0-3e75abf81e17
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.blog
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - blogger
+id: blog_drupal
+theme: blogger
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: visible
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: blog
+    context_mapping: {  }

@@ -8,14 +8,14 @@
 ] %}
 <div{{ attributes.addClass(classes) }}>
     {% if image and video %}
-        <video poster="{{ image|image_style('thumbnail') }}" autoplay loop muted class="{{ bem_block }}__video">
+        <video poster="{{ image|image_style('blog_hero') }}" autoplay loop muted class="{{ bem_block }}__video">
             {% for type, video_uri in video %}
                 <source src="{{ file_url(video_uri) }}" type="{{ type }}">
             {% endfor %}
             {{ 'Your browser does not support the video tag'|t }}
         </video>
     {% elseif image %}
-        <img src="{{ image|image_style('thumbnail') }}" alt="{{ title }}" class="{{ bem_block }}__image">
+        <img src="{{ image|image_style('blog_hero') }}" alt="{{ title }}" class="{{ bem_block }}__image">
     {% endif %}
 
     <div class="{{ bem_block }}__content">

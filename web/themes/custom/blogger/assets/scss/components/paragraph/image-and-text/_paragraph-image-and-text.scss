@@ -1,6 +1,21 @@
-.paragraph-image-and-text {
-  &__content {
+.paragraph-image-text {
+  margin-top: gap(5);
+  margin-bottom: gap(5);
+
+  &__image-text {
     lost-flex-container: row;
+  }
+
+  &__position-right & {
+    &__image-text {
+      flex-flow: row-reverse;
+    }
+
+    &__field-image {
+      margin-left: 30px !important;
+      margin-right: 0 !important;
+
+    }
   }
 
   &__field-title {
@@ -8,65 +23,35 @@
     width: 100%;
   }
 
-  &--image-size-4-12-left {
-    .paragraph-image-text__field-image {
+  &--image-size-4-12 & {
+    &__field-image {
       lost-column: 4/12;
     }
 
-    .paragraph-image-text__field-body {
+    &__field-body {
       lost-column: 8/12;
     }
   }
 
-  &--image-size-6-12-left {
-    .paragraph-image-text__field-image {
+  &--image-size-6-12 & {
+    &__field-image {
       lost-column: 6/12;
     }
 
-    .paragraph-image-text__field-body {
+    &__field-body {
       lost-column: 6/12;
     }
   }
 
-  &--image-size-8-12-left {
-    .paragraph-image-text__field-image {
+  &--image-size-8-12 & {
+    &__field-image {
       lost-column: 8/12;
     }
 
-    .paragraph-image-text__field-body {
+    &__field-body {
       lost-column: 4/12;
     }
   }
 
-  // Image right
 
-  &--image-size-4-12-right {
-    .paragraph-image-text__field-image {
-      lost-column: 4/12;
-    }
-
-    .paragraph-image-text__field-body {
-      lost-column: 8/12;
-    }
-  }
-
-  &--image-size-6-12-right {
-    .paragraph-image-text__field-image {
-      lost-column: 6/12;
-    }
-
-    .paragraph-image-text__field-body {
-      lost-column: 6/12;
-    }
-  }
-
-  &--image-size-8-12-right {
-    .paragraph-image-text__field-image {
-      lost-column: 8/12;
-    }
-
-    .paragraph-image-text__field-body {
-      lost-column: 4/12;
-    }
-  }
 }

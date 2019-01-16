@@ -1,0 +1,27 @@
+.paragraph-remote-videos {
+
+  margin-top: gap(6);
+  margin-bottom: gap(6);
+
+  &__field-remote-videos {
+    lost-flex-container: row;
+  }
+
+  &--videos-per-row-4 {
+    .paragraph-remote-videos__field-remote-videos-item {
+      lost-waffle: 3/12 4;
+    }
+  }
+
+  &--videos-per-row-3 {
+    .paragraph-remote-videos__field-remote-videos-item {
+      lost-waffle: 4/12 3;
+    }
+  }
+
+  &--videos-per-row-2 {
+    .paragraph-remote-videos__field-remote-videos-item {
+      lost-waffle: 6/12 2;
+    }
+  }
+}

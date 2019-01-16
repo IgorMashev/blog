@@ -1,6 +1,6 @@
 uuid: 68432c5f-91fb-469f-95c9-8635ff6f8ec7
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - blogger
