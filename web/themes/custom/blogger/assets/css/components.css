@@ -708,6 +708,64 @@ a.tabledrag-handle .handle {
 .node-page-full__field-paragraphs-item {
   margin-bottom: 32px; }
 
+.node-blog-teaser__field-promo-image {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px; }
+
+.node-blog-teaser__title {
+  font-size: 20px;
+  font-weight: bold; }
+  .node-blog-teaser__title a {
+    color: #333333; }
+    .node-blog-teaser__title a:hover {
+      color: #007bff; }
+
+.node-blog-teaser__meta {
+  font-size: 14px;
+  color: #9e9e9e;
+  display: flex; }
+
+.node-blog-teaser__created {
+  margin-right: 8px; }
+  .node-blog-teaser__created:before {
+    content: "\F0F0";
+    font-family: "Material Design Icons";
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    margin-right: 0.4em; }
+
+.node-blog-teaser__estimated-read-time:before {
+  content: "\F06B";
+  font-family: "Material Design Icons";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  margin-right: 0.4em; }
+
+.node-blog-teaser__estimated-read-time::before {
+  margin-right: 2px; }
+
+.node-blog-teaser__field-tags {
+  font-size: 14px;
+  display: flex;
+  margin: 0 0 16px; }
+
+.node-blog-teaser__field-tags-item {
+  margin-right: 8px; }
+  .node-blog-teaser__field-tags-item:last-child {
+    margin-right: 0; }
+
+.node-blog-teaser__field-tags-item a {
+  background: #884400;
+  color: white;
+  border-radius: 2px;
+  padding: 1px 8px; }
+
 .paragraph-image-text {
   margin-top: 40px;
   margin-bottom: 40px; }
@@ -1178,7 +1236,7 @@ a.tabledrag-handle .handle {
   position: relative;
   z-index: 0;
   margin-top: -42px;
-  height: 600px;
+  min-height: 600px;
   overflow: hidden; }
   .blog-hero__content {
     margin-right: auto;
@@ -1187,7 +1245,7 @@ a.tabledrag-handle .handle {
     padding-left: 15px;
     position: relative;
     z-index: 10;
-    top: 200px; }
+    top: 150px; }
     @media (min-width: 468px) {
       .blog-hero__content {
         width: 420px;
@@ -1257,6 +1315,177 @@ a.tabledrag-handle .handle {
     left: 0;
     background-image: linear-gradient(to bottom, rgba(245, 160, 0, 0.3) 0%, rgba(100, 245, 140, 0.1) 100%);
     background-repeat: repeat-x; }
+  .blog-hero__tags {
+    display: flex;
+    margin-bottom: 16px; }
+  .blog-hero__tag {
+    display: block;
+    background: rgba(136, 68, 0, 0.6);
+    color: white;
+    border-radius: 4px;
+    padding: 4px 16px;
+    font-size: 14px;
+    margin-right: 8px; }
+    .blog-hero__tag:hover {
+      background: #884400; }
+
+.previous-next {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between; }
+  .previous-next__previous, .previous-next__next {
+    width: 47%; }
+
+.previous-next--blog .previous-next__previous, .previous-next--blog .previous-next__next {
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(250, 250, 250, 0.2); }
+
+.previous-next--blog .previous-next__link {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  height: 100%;
+  position: relative;
+  color: rgba(255, 255, 255, 0.9); }
+
+.previous-next--blog .previous-next__promo-image {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover; }
+  .previous-next--blog .previous-next__promo-image::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); }
+
+.previous-next--blog .previous-next__icon {
+  position: relative;
+  z-index: 10;
+  font-size: 34px; }
+  .previous-next--blog .previous-next__icon--previous {
+    margin-right: 24px; }
+    .previous-next--blog .previous-next__icon--previous:before {
+      content: "\F050";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .previous-next--blog .previous-next__icon--next {
+    margin-left: 24px; }
+    .previous-next--blog .previous-next__icon--next:before {
+      content: "\F057";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+
+.previous-next--blog .previous-next__content {
+  position: relative;
+  z-index: 10; }
+  .previous-next--blog .previous-next__content--next {
+    text-align: right;
+    margin-left: auto; }
+
+.previous-next--blog .previous-next__tag {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: bold; }
+  .previous-next--blog .previous-next__tag:not(:last-child)::after {
+    content: ', ';
+    display: inline; }
+
+.blog-social-share {
+  display: flex;
+  align-items: center; }
+  .blog-social-share__label {
+    color: #616161;
+    font-size: 18px;
+    margin-right: 16px; }
+  .blog-social-share__links {
+    display: flex;
+    align-items: center; }
+  .blog-social-share__link {
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    color: white;
+    text-align: center;
+    background: #f5f5f5;
+    display: block;
+    margin-left: 8px;
+    border-radius: 4px; }
+    .blog-social-share__link:hover {
+      opacity: 0.6; }
+  .blog-social-share__link--facebook {
+    background-color: #3b5999; }
+    .blog-social-share__link--facebook:before {
+      content: "\F20C";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .blog-social-share__link--twitter {
+    background-color: #1da1f2; }
+    .blog-social-share__link--twitter:before {
+      content: "\F544";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+  .blog-social-share__link--telegram {
+    background-color: #0088cc; }
+    .blog-social-share__link--telegram:before {
+      content: "\F501";
+      font-family: "Material Design Icons";
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      margin-right: 0; }
+
+.view-blog-in-tag__content {
+  display: flex;
+  flex-flow: row wrap; }
+
+.view-blog-in-tag__row {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(100% * 4/12 - (30px - 30px * 4/12));
+  width: calc(100% * 4/12 - (30px - 30px * 4/12));
+  max-width: calc(100% * 4/12 - (30px - 30px * 4/12));
+  height: calc(100% * 4/12 - (30px - 30px * 4/12)); }
+
+.view-blog-in-tag__row:nth-child(1n) {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 0; }
+
+.view-blog-in-tag__row:last-child {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.view-blog-in-tag__row:nth-child(3n) {
+  margin-right: 0;
+  margin-left: auto; }
+
+.view-blog-in-tag__row:nth-last-child(-n + 3) {
+  margin-bottom: 0; }
 
 .app {
   background: #fafafa; }
@@ -1301,11 +1530,41 @@ a.tabledrag-handle .handle {
       padding-right: 15px;
       padding-left: 15px; } }
   .main-layout__inner {
+    display: flex;
+    flex-flow: row wrap;
     padding: 48px 24px;
     background: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     margin-top: -100px;
     margin-bootom: -50px;
     border-radius: 5px; }
+  .main-layout--sidebar-first .region-content {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% * 9/12 - (30px - 30px * 9/12));
+    max-width: calc(100% * 9/12 - (30px - 30px * 9/12));
+    width: calc(100% * 9/12 - (30px - 30px * 9/12)); }
+  .main-layout--sidebar-first .region-content:nth-child(1n) {
+    margin-right: 30px;
+    margin-left: 0; }
+  .main-layout--sidebar-first .region-content:last-child {
+    margin-right: 0; }
+  .main-layout--sidebar-first .region-content:nth-child(12n) {
+    margin-right: 0;
+    margin-left: auto; }
+  .main-layout--sidebar-first .region-sidebar-first {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% * 3/12 - (30px - 30px * 3/12));
+    max-width: calc(100% * 3/12 - (30px - 30px * 3/12));
+    width: calc(100% * 3/12 - (30px - 30px * 3/12)); }
+  .main-layout--sidebar-first .region-sidebar-first:nth-child(1n) {
+    margin-right: 30px;
+    margin-left: 0; }
+  .main-layout--sidebar-first .region-sidebar-first:last-child {
+    margin-right: 0; }
+  .main-layout--sidebar-first .region-sidebar-first:nth-child(12n) {
+    margin-right: 0;
+    margin-left: auto; }
 
 /*# sourceMappingURL=maps/components.css.map */

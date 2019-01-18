@@ -1,9 +1,10 @@
-uuid: ee38c778-ddd6-4f25-8209-9e1fe322a891
+uuid: 77ab6bf8-c74e-4121-b755-3c936afda5cd
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
     - field.field.node.blog.body
     - field.field.node.blog.field_attachments
     - field.field.node.blog.field_comments
@@ -15,10 +16,10 @@ dependencies:
     - comment
     - entity_reference_revisions
     - user
-id: node.blog.default
+id: node.blog.full
 targetEntityType: node
 bundle: blog
-mode: default
+mode: full
 content:
   field_attachments:
     type: entity_reference_entity_view
@@ -30,7 +31,7 @@ content:
     third_party_settings: {  }
     region: content
   field_comments:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -47,16 +48,18 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
-  field_tags:
-    weight: 0
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   previous_next:
-    weight: 4
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  previous_next_blog:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  social_share:
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -64,4 +67,5 @@ hidden:
   body: true
   estimated_read_time: true
   field_promo_image: true
+  field_tags: true
   links: true

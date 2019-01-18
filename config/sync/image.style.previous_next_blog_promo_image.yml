@@ -1,0 +1,15 @@
+uuid: fbe5d621-6bae-4f22-9834-408ed779251c
+langcode: en
+status: true
+dependencies: {  }
+name: previous_next_blog_promo_image
+label: 'Previous Next Blog Promo-image'
+effects:
+  aa6293ba-ba8f-49ec-a03b-500c96573843:
+    uuid: aa6293ba-ba8f-49ec-a03b-500c96573843
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 499
+      height: 120
+      anchor: center-center

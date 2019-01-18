@@ -11,6 +11,7 @@ function blog_hero_theme($existing, $type, $theme, $path) {
         'subtitle' => NULL,
         'image' => NULL,
         'video' => [],
+        'plugin_id' => NULL,
       ],
       'file' => 'blog_hero.theme.inc',
       'pattern' => 'blog_hero__',
@@ -24,12 +25,24 @@ function blog_hero_theme($existing, $type, $theme, $path) {
 function blog_hero_theme_suggestions_blog_hero(array $variables) {
   $suggestions = [];
 
+  if (!empty($variables['plugin_id'])) {
+    $suggestions[] = 'blog_hero__' . $variables['plugin_id'];
+  }
+
   if (!empty($variables['image'])) {
     $suggestions[] = 'blog_hero__image';
   }
 
   if (!empty($variables['video']) && !empty($variables['image'])) {
     $suggestions[] = 'blog_hero__video';
+  }
+
+  if (!empty($variables['image'])) {
+    $suggestions[] = 'blog_hero__' . $variables['plugin_id'] . 'image';
+  }
+
+  if (!empty($variables['video']) && !empty($variables['image'])) {
+    $suggestions[] = 'blog_hero__' . $variables['plugin_id'] . 'video';
   }
 
   return $suggestions;
