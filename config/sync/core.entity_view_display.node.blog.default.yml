@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.blog.field_tags
     - node.type.blog
   module:
+    - blog
     - comment
     - entity_reference_revisions
     - user
@@ -21,14 +22,12 @@ bundle: blog
 mode: default
 content:
   field_attachments:
-    type: entity_reference_entity_view
+    type: blog_label_with_icon
     weight: 2
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_comments:
     weight: 3
     label: hidden
@@ -65,3 +64,5 @@ hidden:
   estimated_read_time: true
   field_promo_image: true
   links: true
+  previous_next_blog: true
+  social_share: true

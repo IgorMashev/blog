@@ -26,7 +26,13 @@ function blog_theme($existing, $type, $theme, $path) {
       'file' => 'blog.theme.inc',
     ],
     'blog_label_with_icon_media_formatter' => [
-      'variables' => [],
+      'variables' => [
+        'url' => NULL,
+        'label' => NULL,
+        'filesize' => NULL,
+        'mediatype' => NULL,
+        'mime_type' => NULL,
+      ],
       'file' => 'blog.theme.inc',
     ],
   ];
