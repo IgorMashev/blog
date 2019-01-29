@@ -1408,7 +1408,8 @@ a.tabledrag-handle .handle {
 
 .blog-social-share {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 24px; }
   .blog-social-share__label {
     color: #616161;
     font-size: 18px;
@@ -1458,6 +1459,76 @@ a.tabledrag-handle .handle {
       display: inline-block;
       text-decoration: inherit;
       margin-right: 0; }
+
+.blog-label-with-icon-media-formatter {
+  display: flex;
+  align-items: center; }
+  .blog-label-with-icon-media-formatter__icon {
+    margin-right: 8px;
+    flex: 0 0 70px;
+    width: 70px; }
+    .blog-label-with-icon-media-formatter__icon svg {
+      width: 100%; }
+  .blog-label-with-icon-media-formatter__label {
+    display: block;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 4px; }
+  .blog-label-with-icon-media-formatter__filesize {
+    color: #757575;
+    font-size: 14px; }
+
+.blog-content-blog-related-posts__title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  text-transform: uppercase; }
+  .blog-content-blog-related-posts__title span {
+    background: white;
+    position: relative;
+    z-index: 10;
+    padding: 0 16px; }
+  .blog-content-blog-related-posts__title::before {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #e0e0e0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(50% - 1px);
+    z-index: 5; }
+
+.blog-content-blog-related-posts__items {
+  display: flex;
+  flex-flow: row wrap; }
+
+.blog-content-blog-related-posts__item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(100% * 3/12 - (30px - 30px * 3/12));
+  width: calc(100% * 3/12 - (30px - 30px * 3/12));
+  max-width: calc(100% * 3/12 - (30px - 30px * 3/12));
+  height: calc(100% * 3/12 - (30px - 30px * 3/12)); }
+
+.blog-content-blog-related-posts__item:nth-child(1n) {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 0; }
+
+.blog-content-blog-related-posts__item:last-child {
+  margin-right: 0;
+  margin-bottom: 0; }
+
+.blog-content-blog-related-posts__item:nth-child(4n) {
+  margin-right: 0;
+  margin-left: auto; }
+
+.blog-content-blog-related-posts__item:nth-last-child(-n + 4) {
+  margin-bottom: 0; }
 
 .view-blog-in-tag__content {
   display: flex;

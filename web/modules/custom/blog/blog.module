@@ -5,6 +5,7 @@
  */
 
 use \Drupal\imagemagick\ImagemagickExecArguments;
+use \Drupal\Core\Database\Query\AlterableInterface;
 
 /**
  * Implements hook_theme().
@@ -30,7 +31,7 @@ function blog_theme($existing, $type, $theme, $path) {
         'url' => NULL,
         'label' => NULL,
         'filesize' => NULL,
-        'mediatype' => NULL,
+        'media_type' => NULL,
         'mime_type' => NULL,
       ],
       'file' => 'blog.theme.inc',
@@ -45,4 +46,11 @@ function blog_imagemagick_arguments_alter(ImagemagickExecArguments $arguments, $
   $arguments->add('-sampling-factor 4:2:0');
   $arguments->add('-interlace Plane');
   $arguments->add('-strip');
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ */
+function blog_query_entity_query_random_alter(AlterableInterface $query) {
+  $query->orderRandom();
 }

@@ -1,23 +1,20 @@
 {% set bem_block = 'blog-label-with-icon-media-formmater' %}
-{% set classes = {
+{% set classes = [
     bem_block,
-    bem_block ~ '--' ~ media_type|clear_class
-} %}
-<div{{ attributes.addClass(bem_block) }}>
+    bem_block ~ '--' ~ media_type
+] %}
+<div{{ attributes.addClass(classses) }}>
     <a href="{{ url }}" target="_blank" rel="noopener nofollow" class="{{ bem_block }}__icon">
-        {{ source(mime_icon_path) }}
+      text
     </a>
 <div class="{{ bem_block }}__content">
     <a href="{{ url }}" target="_blank" rel="nooponer nofollow" class="{{ bem_block }}__label">
         {{ label }}
     </a>
-</div>
     {% if filesize %}
         <div class="{{ bem_block }}__filesize">
            {{ filesize }}
         </div>
     {% endif %}
-
-    {{ media_type }}
-    {{ mime_type }}
+</div>
 </div>

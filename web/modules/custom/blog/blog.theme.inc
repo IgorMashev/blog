@@ -52,7 +52,7 @@ function template_preprocess_blog_previous_next(&$variables) {
 }
 
 /**
- * Implements hook_template_preprocess_default_variables_alter().
+ * Implements hook_template_preprocess_default_variables_alter() for blog-label-with-icon-media-formatter.html.twig
  */
 function blog_template_preprocess_blog_label_with_icon_media_formatter(array &$variables) {
   $mime_type = $variables['mime_type'];
@@ -68,7 +68,7 @@ function blog_template_preprocess_blog_label_with_icon_media_formatter(array &$v
     'application/msword' => 'application-msword.svg',
     'application/pdf' => 'application-pdf.svg',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg',
-    'audio/x-mpeg' => 'audio-x-mpeg',
+    'audio/x-mpeg' => 'audio-x-mpeg.svg',
     'audio/x-wav' => 'audio-x-wav.svg',
     'text/csv' => 'text-csv.svg',
     'text/plain' => 'text-plain.svg',

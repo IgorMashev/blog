@@ -87,9 +87,9 @@ class LabelWithIconFormatter extends EntityReferenceFormatterBase implements Con
       $element[$delta] = [
         '#theme' => 'blog_label_with_icon_media_formatter',
         '#url' => $this->getMediaUrl($entity),
-        '#label' => $$entity->label(),
+        '#label' => $entity->label(),
         '#filesize' => $this->getMediaFileSize($entity),
-        '#mediatype' => $entity->bundle(),
+        '#media_type' => $entity->bundle(),
         '#mime_type' => $this->getMediaMimeType($entity),
       ];
     }
@@ -168,7 +168,6 @@ class LabelWithIconFormatter extends EntityReferenceFormatterBase implements Con
       default:
         return 'application/octet-stream';
     }
-    return;
   }
 
   /**

@@ -9,6 +9,17 @@ use \Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use \Drupal\node\NodeInterface;
 use \Drupal\Component\Utility\Html;
 
+function blog_content_blog_theme($existing, $type, $theme, $path) {
+  return [
+    'blog_content_blog_related_posts' => [
+      'variables' => [
+
+      ],
+      'file' => 'blog_content_blog.theme.inc',
+    ],
+  ];
+}
+
 /**
  * Implements hook_entity_extra_field_info().
  */
@@ -30,6 +41,12 @@ function blog_content_blog_entity_extra_field_info() {
 
   $extra['node']['blog']['display']['social_share'] = [
     'label' => t('Links to share'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
+
+  $extra['node']['blog']['display']['related_posts'] = [
+    'label' => t('Related posts'),
     'weight' => 100,
     'visible' => FALSE,
   ];
@@ -67,6 +84,12 @@ function blog_content_blog_node_view(array &$build, NodeInterface $node, EntityV
       '#theme' => 'blog_social_share',
       '#url' => $node->toUrl()->toString(TRUE)->getGeneratedUrl(),
       '#label' => $node->label(),
+    ];
+  }
+
+  if ($display->getComponent('related_posts')) {
+    $build['related_posts'] = [
+      '#theme' => 'blog_content_blog_related_posts',
     ];
   }
 }
