@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.blog.field_tags
     - node.type.blog
   module:
+    - blog
     - comment
     - entity_reference_revisions
     - user
@@ -22,17 +23,15 @@ bundle: blog
 mode: full
 content:
   field_attachments:
-    type: entity_reference_entity_view
+    type: blog_label_with_icon
     weight: 2
     label: hidden
-    settings:
-      view_mode: default
-      link: false
+    settings: {  }
     third_party_settings: {  }
     region: content
   field_comments:
-    weight: 4
-    label: hidden
+    weight: 6
+    label: above
     settings:
       view_mode: default
       pager_id: 0
@@ -55,6 +54,16 @@ content:
     third_party_settings: {  }
   previous_next_blog:
     weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  random_posts:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  related_posts:
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

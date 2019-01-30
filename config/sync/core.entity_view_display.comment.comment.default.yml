@@ -17,11 +17,23 @@ content:
   comment_body:
     label: hidden
     type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  homepage:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  letter_avatar:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 100
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

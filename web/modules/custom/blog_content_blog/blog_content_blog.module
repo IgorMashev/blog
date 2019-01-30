@@ -13,10 +13,17 @@ function blog_content_blog_theme($existing, $type, $theme, $path) {
   return [
     'blog_content_blog_related_posts' => [
       'variables' => [
-
+        'max' => 4,
+        'max_exact_same_tags' => 4
       ],
       'file' => 'blog_content_blog.theme.inc',
     ],
+    'blog_content_blog_random_posts' => [
+      'variables' => [
+        'limit' => 4
+      ],
+      'file' => 'blog_content_blog.theme.inc',
+    ]
   ];
 }
 
@@ -50,6 +57,11 @@ function blog_content_blog_entity_extra_field_info() {
     'weight' => 100,
     'visible' => FALSE,
   ];
+  $extra['node']['blog']['display']['random_posts'] = [
+    'label' => t('Random posts'),
+    'weight' => 100,
+    'visible' => FALSE,
+  ];
 
   return $extra;
 }
@@ -58,7 +70,7 @@ function blog_content_blog_entity_extra_field_info() {
  * Implements hook_ENTITY_TYPE_view.
  */
 function blog_content_blog_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
-  $bem_block = Html::getClass('node-' . $node->bundle() . ($view_mode == 'default' ?: '-' . $view_mode));
+  $bem_block = Html::getClass('node-' . $node->bundle() . ($view_mode == 'default' ? '' : '-' . $view_mode));
   if ($display->getComponent('estimated_read_time')) {
     $node_paragraphs = $node->get('field_content')->referencedEntities();
     $estimated_read_time = _blog_content_blog_estimated_read_time($node_paragraphs);
@@ -90,6 +102,15 @@ function blog_content_blog_node_view(array &$build, NodeInterface $node, EntityV
   if ($display->getComponent('related_posts')) {
     $build['related_posts'] = [
       '#theme' => 'blog_content_blog_related_posts',
+    ];
+  }
+
+  if ($display->getComponent('random_posts')) {
+    $build['random_posts'] = [
+      '#create_placeholder' => TRUE,
+      '#lazy_builder' => [
+        'blog_content_blog.lazy_builder:randomBlogPosts', [],
+      ],
     ];
   }
 }

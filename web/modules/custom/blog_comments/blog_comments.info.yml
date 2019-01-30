@@ -1,0 +1,7 @@
+name: BLOG - Comments
+type: module
+description: The comment custom code.
+package: blog
+core: 8.x
+dependencies:
+  - drupal:comment

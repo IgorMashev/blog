@@ -1,0 +1,6 @@
+services:
+  blog.event_subscriber:
+    class: Drupal\blog\EventSubscriber\BlogSubscriber
+    arguments: ['@session_manager']
+    tags:
+      - { name: event_subscriber }

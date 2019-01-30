@@ -22,7 +22,7 @@ class BlogManager implements BlogManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function getRelatedPostsWithExactSameTags(NodeInterface $node, $limit = 2) {
+  public function getRelatedPostsWithExactSameTags(NodeInterface $node, $limit = 4) {
     $result = &drupal_static(this::class . __METHOD__ . $node->id() . $limit);
     if (!isset($result)){
       if ($node->hasField('field_tags') && !$node->get('field_tags')->isEmpty()) {
@@ -49,10 +49,11 @@ class BlogManager implements BlogManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function getRelatedPostsWithSameTags(NodeInterface $node, array $exclude_ids = [], $limit = 2) {
+  public function getRelatedPostsWithSameTags(NodeInterface $node, array $exclude_ids = [], $limit = 4) {
     $result = &drupal_static(this::class . __METHOD__ . $node->id() . $limit);
     if (!isset($result)){
       if ($node->hasField('field_tags') && !$node->get('field_tags')->isEmpty()) {
+        $exclude_ids = $this->getRelatedPostsWithExactSameTags($node);
         $field_tags_ids = [];
         foreach ($node->get('field_tags')->getValue() as $field_tag) {
           $field_tags_ids[] = $field_tag['target_id'];
@@ -60,9 +61,12 @@ class BlogManager implements BlogManagerInterface {
         $query = $this->nodeStorage->getQuery()
           ->condition('status', NodeInterface::PUBLISHED)
           ->condition('nid', $node->id(), '<>')
-          ->condition('nid', $exclude_ids, 'NOT IN')
+          ->condition('type', 'blog')
           ->condition('field_tags', $field_tags_ids, 'IN')
           ->range(0, $limit);
+        if (!empty($exclude_ids)) {
+          $query->condition('nid', $exclude_ids, 'NOT IN');
+        }
         $query->addTag('entity_query_random');
 
         $result = $query->execute();
@@ -77,11 +81,14 @@ class BlogManager implements BlogManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function getRandomPosts($limit = 2, array $exclude_ids = []) {
+  public function getRandomPosts($limit = 4, array $exclude_ids = []) {
     $query = $this->nodeStorage->getQuery()
       ->condition('status', NodeInterface::PUBLISHED)
-      ->condition('nid', $exclude_ids, '<>')
+      ->condition('type', 'blog')
       ->range(0, $limit);
+    if (!empty($exclude_ids)) {
+      $query->condition('nid', $exclude_ids, 'NOT IN');
+    }
     $query->addTag('entity_query_random');
     return $result = $query->execute();
   }
@@ -89,12 +96,16 @@ class BlogManager implements BlogManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function getRelatedPosts(NodeInterface $node, $max = 4, $exact_tags = 2) {
+  public function getRelatedPosts(NodeInterface $node, $max = 4, $exact_tags = 4) {
     $result = &drupal_static(this::class . __METHOD__ . $node->id() . $max . $exact_tags);
     if (!isset($result)){
       if ($exact_tags > $max) {
         $exact_tags = $max;
       }
+
+      $exclude_ids = [
+        $node->id(),
+      ];
 
       $counter = 0;
       $result = [];
@@ -102,26 +113,18 @@ class BlogManager implements BlogManagerInterface {
         $exact_same = $this->getRelatedPostsWithExactSameTags($node, $exact_tags);
         $result += $exact_same;
         $counter += count($exact_same);
+        $exclude_ids += $exact_same;
       }
 
       if ($counter < $max) {
-        $exclude_ids = [];
-        if (!empty($exact_same)) {
-          $exclude_ids = $exact_same;
-        }
-
         $same_tags = $this->getRelatedPostsWithSameTags($node, $exclude_ids, ($max-$counter));
         $result += $same_tags;
         $counter += count($same_tags);
+        $exclude_ids += $exact_same;
       }
 
       if ($counter < $max) {
-        if (!empty($same_tags)) {
-          $exclude_ids += $same_tags;
-        }
-
         $result += $this->getRandomPosts(($max - $counter), $exclude_ids);
-
       }
      }
     return $result;

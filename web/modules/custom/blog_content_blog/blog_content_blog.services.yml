@@ -2,3 +2,5 @@ services:
   blog_content_blog.manager:
     class: 'Drupal\blog_content_blog\Service\BlogManager'
     arguments: ['@entity_type.manager']
+  blog_content_blog.lazy_builder:
+    class: 'Drupal\blog_content_blog\Service\BlogLazyBuilder'

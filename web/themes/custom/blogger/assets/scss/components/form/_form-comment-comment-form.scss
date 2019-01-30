@@ -1,0 +1,10 @@
+.form-comment-comment-form {
+  &__author {
+    display: flex;
+    justify-content: space-between;
+
+    .form-item {
+      width: 32%;
+    }
+  }
+}
