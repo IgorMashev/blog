@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
+    - core.entity_view_display.comment.comment.full
     - field.field.node.blog.body
     - field.field.node.blog.field_attachments
     - field.field.node.blog.field_comments
@@ -32,7 +32,7 @@ content:
     weight: 3
     label: above
     settings:
-      view_mode: default
+      view_mode: full
       pager_id: 0
     third_party_settings: {  }
     type: comment_default

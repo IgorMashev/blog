@@ -1,0 +1,8 @@
+name: BLOG - Taxonomy terms
+type: module
+description: The description.
+package: blog
+core: 8.x
+dependencies:
+  - drupal:taxonomy
+  - drupal:node

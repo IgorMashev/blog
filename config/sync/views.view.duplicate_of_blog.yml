@@ -1,17 +1,15 @@
-uuid: 76de077e-2085-4df4-8e02-e6beb10765c9
+uuid: 33c49240-a602-4345-93f0-a130e0e9a991
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.blog
-    - taxonomy.vocabulary.tags
   module:
     - node
-    - taxonomy
     - user
-id: blog
-label: Blog
+id: duplicate_of_blog
+label: 'Duplicate of Blog'
 module: views
 description: ''
 tag: ''
@@ -169,97 +167,32 @@ display:
       footer: {  }
       empty: {  }
       relationships: {  }
-      arguments:
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          default_action: 'not found'
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: true
-          title: '{{ arguments.tid }}'
-          default_argument_type: fixed
-          default_argument_options:
-            argument: ''
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            items_per_page: 25
-            override: false
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: true
-          validate:
-            type: 'entity:taxonomy_term'
-            fail: 'not found'
-          validate_options:
-            bundles:
-              tags: tags
-            access: true
-            operation: view
-            multiple: 0
-          break_phrase: false
-          add_table: false
-          require_value: false
-          reduce_duplicates: true
-          plugin_id: taxonomy_index_tid
+      arguments: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  feed_1:
-    display_plugin: feed
-    id: feed_1
-    display_title: Feed
-    position: 2
-    display_options:
-      display_extenders:
-        metatag_display_extender: {  }
-      row:
-        type: node_rss
-        options: {  }
-      path: taxonomy/term/%/feed
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  in_tag:
+  articles:
     display_plugin: page
-    id: in_tag
+    id: articles
     display_title: Tags
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: taxonomy/term/%
+      path: blog
       display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions

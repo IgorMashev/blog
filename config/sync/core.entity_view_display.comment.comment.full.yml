@@ -1,18 +1,19 @@
-uuid: f5c38872-814a-4b27-b128-a3fb77a3080b
+uuid: 49386087-dcab-48c6-8fa3-08365041855e
 langcode: en
 status: true
 dependencies:
   config:
     - comment.type.comment
+    - core.entity_view_mode.comment.full
     - field.field.comment.comment.comment_body
   module:
     - text
 _core:
   default_config_hash: 77Ye1kR-P6AaiGfEO8mnXNSr7nqtnP3PiiVBwJeGGMI
-id: comment.comment.default
+id: comment.comment.full
 targetEntityType: comment
 bundle: comment
-mode: default
+mode: full
 content:
   comment_body:
     label: hidden

@@ -1,6 +1,6 @@
 $avatar-width: 40px;
 
-.comment-comment {
+.comment-comment-full {
   display: flex;
   margin-right: gap(3);
   margin-bottom: gap(3);
@@ -46,20 +46,81 @@ $avatar-width: 40px;
 
   &__header {
     display: flex;
+    align-items: center;
     margin-bottom: gap(1);
+  }
+
+  &__header_item {
+    margin-right: gap();
+    display: inline-flex;
+  }
+
+  &__new {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px gap();
+    color: white;
+    border-radius: $border-radius-base;
+    text-shadow: 0 1px 3px rgba(black, 0.1);
+    background-color: #4BB30F;
+  }
+
+  .username {
+    font-weight: bold;
+    color: #000;
+    margin-right: gap();
+  }
+
+  &__homepage {
+    @include gradient-directional(#884400, white);
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-flex;
+    padding: 0 gap();
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 3px rgba(black, 0.2);
   }
 
   &__footer {
     display: flex;
+    margin-top: gap();
     justify-content: space-between;
+    font-size: 14px;
+  }
+
+  &__footer-item {
+    margin-right: gap();
+    display: inline-flex;
   }
 
   .links {
     @include list-unstyled;
     display: flex;
-    font-size: 14px;
+
+    li {
+      margin-left: gap();
+
+      a {
+        color: gray(600);
+
+        &:hover {
+          color: gray(800);
+        }
+      }
+
+      &:first-child {
+        margin-left: unset;
+      }
+    }
+
+    &__created {
+      color: gray(500);
+    }
 
   }
+
+
 
   //&:last-child {
   //  margin-bottom: unset;

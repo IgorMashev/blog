@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.tags.field_promo_image
     - taxonomy.vocabulary.tags
   module:
+    - photoswipe
     - text
 id: taxonomy_term.tags.default
 targetEntityType: taxonomy_term
@@ -18,4 +20,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_promo_image:
+    type: photoswipe_field_formatter
+    weight: 1
+    label: above
+    settings:
+      photoswipe_node_style_first: ''
+      photoswipe_node_style: ''
+      photoswipe_image_style: ''
+      photoswipe_reference_image_field: ''
+      photoswipe_caption: ''
+      photoswipe_caption_custom: ''
+      photoswipe_view_mode: ''
+    third_party_settings: {  }
+    region: content
 hidden: {  }

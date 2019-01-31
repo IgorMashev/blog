@@ -73,8 +73,14 @@
     .indented {
       margin-left: gap(6);
       margin-bottom: gap(6);
-      border-bottom: gray(300);
     }
+
+    .comment-comment-full {
+      margin-bottom: gap(3);
+      padding-bottom: gap(3);
+      border-bottom: 1px solid gray(300);
+    }
+
   }
 
 }

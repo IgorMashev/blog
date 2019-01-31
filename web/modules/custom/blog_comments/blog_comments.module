@@ -50,13 +50,17 @@ function _blog_comments_remove_textarea_format($element, \Drupal\Core\Form\FormS
  */
 function blog_comments_form_comment_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
-  $form['author']['name']['#attributes']['placeholder'] = 'Ihor Mashevskyi';
-  $form['author']['name']['#access'] = TRUE;
-  $form['author']['mail']['#attributes']['placeholder'] = 'igor@mashevskyi.com';
-  $form['author']['mail']['#access'] = TRUE;
   unset($form['author']['mail']['#description']);
-  $form['author']['homepage']['#attributes']['placeholder'] = 'http://mashevskyi.com';
-  $form['author']['homepage']['#access'] = TRUE;
+  $user = \Drupal::currentUser()->getRoles();
+  if (in_array('anonymous', $user)) {
+    $form['author']['name']['#attributes']['placeholder'] = 'Ihor Mashevskyi';
+    $form['author']['name']['#access'] = TRUE;
+    $form['author']['mail']['#attributes']['placeholder'] = 'igor@mashevskyi.com';
+    $form['author']['mail']['#access'] = TRUE;
+    $form['author']['homepage']['#attributes']['placeholder'] = 'http://mashevskyi.com';
+    $form['author']['homepage']['#access'] = TRUE;
+  }
+
 }
 
 function blog_comments_entity_extra_field_info() {
@@ -103,9 +107,9 @@ function blog_comments_comment_view(array &$build, CommentInterface $comment, En
   }
 
   if ($display->getComponent('homepage') && !$comment->get('homepage')->isEmpty()) {
-    $build['letter_avatar'] = [
+    $build['homepage'] = [
       '#type' => 'inline_template',
-      '#template' => '<a href="{{ url }}" class="{{ class }}" target="_blank" rel="noopener nofollow">WWW</a>',
+      '#template' => '<div class="{{ class }}"><a href="{{ url }}" target="_blank" rel="noopener nofollow">WWW</a></div> ',
       '#context' => [
         'class' => $bem_block . '__homepage',
         'url' => $comment->get('homepage')->value,
@@ -118,5 +122,9 @@ function blog_comments_comment_view(array &$build, CommentInterface $comment, En
  * Implements hook_preprocess_username().
  */
 function blog_comments_preprocess_username(&$variables) {
+
   unset($variables['link_path']);
+  unset($variables['attributes']['rel']);
+  $variables['attributes']['class'][] = 'username';
+
 }

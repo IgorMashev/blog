@@ -10,7 +10,7 @@ logic: and
 conditions:
   e98f7c10-05cd-472a-9205-d900324d3a92:
     id: request_path
-    pages: /blog
+    pages: "/blog\r\n/taxonomy/term/*"
     negate: false
     context_mapping: {  }
     uuid: e98f7c10-05cd-472a-9205-d900324d3a92

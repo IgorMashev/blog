@@ -1,0 +1,4 @@
+services:
+  blog_taxonomy.tags_helper:
+    class: Drupal\blog_taxonomy\Service\TagsHelper
+    arguments: ['@entity_type.manager']
