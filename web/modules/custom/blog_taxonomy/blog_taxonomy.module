@@ -41,7 +41,7 @@ function blog_taxonomy_taxonomy_term_view(array &$build, TermInterface $term, En
         '#alt' => $term->label(),
         '#attributes' => [
           'class' => [
-            $bem_block . '__promo_image',
+            $bem_block . '__promo-image',
           ]
         ]
       ];

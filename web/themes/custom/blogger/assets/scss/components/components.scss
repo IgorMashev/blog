@@ -59,6 +59,7 @@
 @import "include/social-links";
 
 // Taxonomy term.
+@import "taxonomy-term/tags/taxonomy-term-tags-teaser";
 
 // Theme (hook_theme).
 @import "theme/blog-hero";
@@ -76,3 +77,4 @@
 // Layout
 @import "layout/app";
 @import "layout/main-layout";
+@import "layout/region-content";
