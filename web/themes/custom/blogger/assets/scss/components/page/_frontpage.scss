@@ -1,0 +1,23 @@
+.frontpage {
+  position: relative;
+  margin-top: -42px;
+
+  &__containter {
+    @include media-container();
+  }
+
+  &__welcome {
+    padding-top: 42px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__welcome-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}

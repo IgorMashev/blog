@@ -26,3 +26,15 @@ function blogger_preprocess_page(array &$variables) {
 
   $variables['main_layout_attributes'] = $main_layout_attributes;
 }
+
+function blogger_preprocess_page__front(array &$variables) {
+  $media_storege = \Drupal::entityTypeManager()->getStorage('media');
+  $media_image = $media_storege->load('15');
+  $media_video = $media_storege->load('14');
+
+  $variables['search_image_uri'] = $media_image->get('field_media_image')
+    ->entity->getFileUri();
+
+  $variables['search_video_uri'] = $media_video->get('field_media_video_file')
+    ->entity->getFileUri();
+}

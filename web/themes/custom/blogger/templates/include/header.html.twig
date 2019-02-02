@@ -3,10 +3,14 @@
     use_site_logo: false,
     use_site_slogan: false,
 } %}
+{% set show_blog_hero = show_blog_hero is defined ? show_blog_hero : true %}
 <header class="{{ bem_block }}" role="banner">
         <div class="{{ bem_block}}__top">
    		{{ drupal_block('system_branding_block', brending_config) }}
-   		{{ drupal_block('system_menu_block:main') }}
+   		{{ drupal_block('system_menu_block:main', {label_display: false}) }}
         </div>
-    {{ drupal_block('blog_hero') }}
+
+    {% if show_blog_hero %}
+        {{ drupal_block('blog_hero') }}
+    {% endif %}
 </header>

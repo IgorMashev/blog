@@ -1970,4 +1970,57 @@ a.tabledrag-handle .handle {
 .region-content {
   width: 100%; }
 
+.frontpage {
+  position: relative;
+  margin-top: -42px; }
+  .frontpage__containter {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media (min-width: 468px) {
+      .frontpage__containter {
+        width: 420px;
+        max-width: 100%; } }
+    @media (min-width: 768px) {
+      .frontpage__containter {
+        width: 720px;
+        max-width: 100%; } }
+    @media (min-width: 992px) {
+      .frontpage__containter {
+        width: 960px;
+        max-width: 100%; } }
+    @media (min-width: 1200px) {
+      .frontpage__containter {
+        width: 1140px;
+        max-width: 100%; } }
+    @media (min-width: 468px) {
+      .frontpage__containter {
+        padding-right: 15px;
+        padding-left: 15px; } }
+    @media (min-width: 768px) {
+      .frontpage__containter {
+        padding-right: 15px;
+        padding-left: 15px; } }
+    @media (min-width: 992px) {
+      .frontpage__containter {
+        padding-right: 15px;
+        padding-left: 15px; } }
+    @media (min-width: 1200px) {
+      .frontpage__containter {
+        padding-right: 15px;
+        padding-left: 15px; } }
+  .frontpage__welcome {
+    padding-top: 42px;
+    position: relative;
+    overflow: hidden; }
+  .frontpage__welcome-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
 /*# sourceMappingURL=maps/components.css.map */

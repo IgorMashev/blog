@@ -37,12 +37,13 @@ paragraph.code:
 # Third party libraries
 highlightjs:
   remote: https://highlightjs.org/
-  version: 9.10
+  version: 9.12
   license:
     name: BSD
     gpl-compatible: true
   css:
     theme:
-      /libraries/highlightjs/styles/arduino-light.css: {}
+      /libraries/highlightjs/styles/idea.css: {}
   js:
     /libraries/highlightjs/highlight.pack.min.js: { minfied: true }
+

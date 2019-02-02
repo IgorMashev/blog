@@ -1,0 +1,18 @@
+[
+    {
+        "name": "npm-asset/highlightjs",
+        "version": "9.12.0",
+        "version_normalized": "9.12.0.0",
+        "dist": {
+            "type": "tar",
+            "url": "https://registry.npmjs.org/highlightjs/-/highlightjs-9.12.0.tgz",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "npm-asset",
+        "installation-source": "dist",
+        "license": [
+            "BSD-3-Clause"
+        ]
+    }
+]

@@ -1,0 +1,20 @@
+{% set bem_block = 'frontpage' %}
+<main class="{{ bem_block }}">
+    <div class="{{ bem_block }}__welcome">
+
+        <video poster="{{ search_image_uri|image_style('blog_hero') }}" autoplay loop muted class="{{ bem_block }}__welcome-video">
+                <source src="{{ file_url(search_video_uri) }}" type="video/mp4">
+            {{ 'Your browser does not support the video tag'|t }}
+        </video>
+
+        <div class="container">
+            <h1 class="{{ bem_block }}__welcome-title">My awesome blog</h1>
+
+            <div class="{{ bem_block }}__search">
+                <input type="text" autocomplete="off" class="{{ bem_block }}__search-input">
+                <button class="{{ bem_block }}__search-submit">Search</button>
+            </div>
+        </div>
+
+    </div>
+</main>
