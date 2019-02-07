@@ -1,0 +1,126 @@
+$icons: (
+        'drupal': 'drupal',
+        'php': 'language-php',
+        'html': 'language-html5',
+        'css': 'language-css3',
+        'js': 'language-javascript',
+        'server': 'server',
+);
+
+$price_icons: (
+        'hour-rate': 'account-clock-outline',
+        'audit': 'file-document-outline',
+);
+
+.about-page {
+  margin-top: -42px;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    max-height: 100vh;
+  }
+
+  &__left {
+    @include gradient-directional(gray(300), white, 135deg);
+    width: 50%;
+    padding: gap(20) gap(10);
+    position: relative;
+    overflow: auto;
+  }
+
+  &__right {
+    width: 50%;
+    position: relative;
+    padding-top: 42px;
+    overflow: hidden;
+
+    &::before {
+      @include gradient-directional(rgba(theme-color('secondary'), 0.5), rgba(theme-color(), 0.5), 125deg);
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__about-poster {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.1;
+    user-select: none;
+  }
+
+  &__skills {
+    margin-bottom: gap(6);
+  }
+
+  &__skills-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: gap(3);
+    text-transform: uppercase;
+
+    span {
+      color: theme-color();
+    }
+  }
+
+  &__skills-items {
+    lost-flex-container: row;
+  }
+
+  &__skills-item {
+    lost-waffle: 6/12 2;
+    background-color: rgba(white, 0.05);
+    padding: gap(2);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(black, 0.2);
+  }
+
+  &__skills-item-title {
+    color: black;
+    font-weight: bold;
+    margin-bottom: gap();
+  }
+
+  &__skills-item-description {
+    font-size: 16px;
+  }
+
+  @each $modifier, $icon in $icons {
+    &__skills-item-icon--#{$modifier} {
+      @include mdi-icon($icon, before, 0);
+    }
+  }
+
+  &__skills-item-icon {
+    color: theme-color(secondary);
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: gap();
+  }
+
+}

@@ -2,19 +2,55 @@
 <main class="{{ bem_block }}">
     <div class="{{ bem_block }}__welcome">
 
-        <video poster="{{ search_image_uri|image_style('blog_hero') }}" autoplay loop muted class="{{ bem_block }}__welcome-video">
-                <source src="{{ file_url(search_video_uri) }}" type="video/mp4">
+        <video poster="{{ search_image_uri|image_style('blog_hero') }}" autoplay loop muted
+               class="{{ bem_block }}__welcome-video">
+            <source src="{{ file_url(search_video_uri) }}" type="video/mp4">
             {{ 'Your browser does not support the video tag'|t }}
         </video>
 
-        <div class="container">
-            <h1 class="{{ bem_block }}__welcome-title">My awesome blog</h1>
+        <div class="{{ bem_block }}__container">
+            <div class="{{ bem_block }}__welcome-inner">
+                <h1 class="{{ bem_block }}__welcome-title">My awesome blog</h1>
 
-            <div class="{{ bem_block }}__search">
-                <input type="text" autocomplete="off" class="{{ bem_block }}__search-input">
-                <button class="{{ bem_block }}__search-submit">Search</button>
+                <div class="{{ bem_block }}__welcome-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at aut cumque deserunt
+                        distinctio harum ipsa necessitatibus placeat recusandae veniam.</p>
+                </div>
+                <div class="{{ bem_block }}__search">
+                    <input type="text" autocomplete="off" class="{{ bem_block }}__search-input" placeholder="Search">
+                    <button class="{{ bem_block }}__search-submit">Search</button>
+                </div>
             </div>
         </div>
+    </div>
 
+    <div class="{{ bem_block }}__author">
+        <img src="{{ author_background|image_style('main_background') }}" class="{{ bem_block }}__bg">
+        <div class="{{ bem_block }}__container">
+            <div class="{{ bem_block }}__author-inner">
+                <a href="{{ url('entity.node.canonical', {node: 1}) }}">
+                    <img src="{{ author_avatar|image_style('front_avatar') }}" class="{{ bem_block }}__author-avatar">
+                </a>
+                <div class="{{ bem_block }}__author-about">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem et eum iste molestias mollitia
+                        natus nisi quis. Adipisci, aut, autem! Atque, culpa nemo nostrum placeat praesentium similique
+                        tenetur vero voluptates. Accusamus, hic, illum. Aliquam, doloremque eaque eveniet obcaecati
+                        officia sint vel. Cum laboriosam modi suscipit voluptate! Ab, cupiditate, illo.</p>
+                </div>
+                <a href="{{ url('entity.node.canonical', {node: 1}) }}" class="{{ bem_block }}__author-more">More about
+                    author</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="{{ bem_block }}__articles">
+        <div class="{{ bem_block }}__container">
+            <h2 class="{{ bem_block }}__articles-title">Recent publications</h2>
+
+            {{ drupal_view('blog', 'recent_publications') }}
+        </div>
+    </div>
+    <div class="{{ bem_block }}__blog-button">
+        <a href="{{ url('view.articles.articles') }}">Go to blog</a>
     </div>
 </main>

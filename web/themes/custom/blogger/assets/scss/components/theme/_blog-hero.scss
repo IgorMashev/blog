@@ -53,7 +53,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    @include gradient-y(rgba(245, 160, 0, 0.3), rgba(100, 245, 140, 0.1));
+    @include gradient-directional(rgba(theme-color(), 0.7), rgba(theme-color('secondary'), 0.7), 110deg);
   }
 
   &__tags {

@@ -1,0 +1,54 @@
+{% set bem_block = 'contact-page' %}
+<div class="{{ bem_block }}">
+    <div class="{{ bem_block }}__inner">
+        <div class="{{ bem_block }}__left">
+            <h1 class="{{ bem_block }}__title">Contact</h1>
+
+            <div class="{{ bem_block }}__contact-information">
+                <h2 class="{{ bem_block }}__lets-talk">Let's <span>talk</span></h2>
+
+                <div class="{{ bem_block }}__contact-items">
+                    <div class="{{ bem_block }}__contact-item">
+                        <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--address"></span>
+                        <div class="{{ bem_block }}__contact-item-label">Address</div>
+                        <div class="{{ bem_block }}__contact-item-value">Ukraine, Lutsk</div>
+                    </div>
+
+                    <div class="{{ bem_block }}__contact-item">
+                        <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--email"></span>
+                        <div class="{{ bem_block }}__contact-item-label">Email</div>
+                        <div class="{{ bem_block }}__contact-item-value"><a href="mailto:gavin.belson@hooli.com">ihormashevskyi@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="{{ bem_block }}__contact-item">
+                        <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--phone"></span>
+                        <div class="{{ bem_block }}__contact-item-label">Tel.</div>
+                        <div class="{{ bem_block }}__contact-item-value"><a href="#">+380971913545</a></div>
+                    </div>
+
+                    <div class="{{ bem_block }}__contact-item">
+                        <span class="{{ bem_block }}__contact-item-icon {{ bem_block }}__contact-item-icon--availability"></span>
+                        <div class="{{ bem_block }}__contact-item-label">Availability</div>
+                        <div class="{{ bem_block }}__contact-item-value">{{ blog_availability_status() }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="{{ bem_block }}__contact-form">
+                <h2 class="{{ bem_block }}__contact-form-title">Feedback <span>form</span></h2>
+
+                {{ contact_form }}
+
+            </div>
+        </div>
+
+        <div class="{{ bem_block }}__right">
+            <video poster="{{ contact_image_uri|image_style('thumbnail') }}" autoplay loop muted
+                   class="{{ bem_block }}__contact-video">
+                <source src="{{ file_url(contact_video_uri) }}" type="video/mp4">
+                {{ 'Your browser does not support the video tag'|t }}
+            </video>
+        </div>
+    </div>
+</div>

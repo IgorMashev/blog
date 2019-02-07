@@ -1,0 +1,58 @@
+{% set bem_block = 'about-page' %}
+<div class="{{ bem_block }}">
+    <div class="{{ bem_block }}__inner">
+        <div class="{{ bem_block }}__left">
+            <h1 class="{{ bem_block }}__title">About author</h1>
+
+            <div class="{{ bem_block }}__skills">
+                <h2 class="{{ bem_block }}__skills-title">My skills</h2>
+
+                <div class="{{ bem_block }}__skills-items">
+                    <div class="{{ bem_block }}__skills-item">
+                        <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--drupal"></div>
+                        <div class="{{ bem_block }}__skills-item-title">Drupal</div>
+                        <div class="{{ bem_block }}__skills-item-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+                        </div>
+                    </div>
+
+                    <div class="{{ bem_block }}__skills-item">
+                        <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--php"></div>
+                        <div class="{{ bem_block }}__skills-item-title">PHP</div>
+                        <div class="{{ bem_block }}__skills-item-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+                        </div>
+                    </div>
+
+                    <div class="{{ bem_block }}__skills-item">
+                        <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--html"></div>
+                        <div class="{{ bem_block }}__skills-item-title">HTML</div>
+                        <div class="{{ bem_block }}__skills-item-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+                        </div>
+                    </div>
+
+                    <div class="{{ bem_block }}__skills-item">
+                        <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--css"></div>
+                        <div class="{{ bem_block }}__skills-item-title">CSS/SCSS</div>
+                        <div class="{{ bem_block }}__skills-item-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+                        </div>
+                    </div>
+
+                    <div class="{{ bem_block }}__skills-item">
+                        <div class="{{ bem_block }}__skills-item-icon {{ bem_block }}__skills-item-icon--js"></div>
+                        <div class="{{ bem_block }}__skills-item-title">JavaScript</div>
+                        <div class="{{ bem_block }}__skills-item-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, modi?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="{{ bem_block }}__right">
+            <img src="{{ about_image_uri|image_style('blog_hero') }}" alt="About author" class="{{ bem_block }}__about-poster">
+        </div>
+    </div>
+</div>
