@@ -1,0 +1,7 @@
+blog.availability.settings:
+  type: config_object
+  label: 'Blog availability settings'
+  mapping:
+    status:
+      type: string
+      label: 'Status'

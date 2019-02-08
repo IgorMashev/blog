@@ -1,0 +1,10 @@
+blog.admin:
+  title: 'Blog'
+  parent: system.admin
+  route_name: blog.admin
+  weight: -50
+
+blog.availbility_settings:
+  title: 'Availability'
+  parent: blog.admin
+  route_name: blog.availability_settings

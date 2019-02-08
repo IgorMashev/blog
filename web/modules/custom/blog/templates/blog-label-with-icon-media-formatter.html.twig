@@ -3,9 +3,9 @@
     bem_block,
     bem_block ~ '--' ~ media_type
 ] %}
-<div{{ attributes.addClass(classses) }}>
+<div{{ attributes.addClass(classes) }}>
     <a href="{{ url }}" target="_blank" rel="noopener nofollow" class="{{ bem_block }}__icon">
-      text
+        {{ source(mime_icon_path) }}
     </a>
 <div class="{{ bem_block }}__content">
     <a href="{{ url }}" target="_blank" rel="nooponer nofollow" class="{{ bem_block }}__label">

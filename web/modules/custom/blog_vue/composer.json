@@ -1,0 +1,8 @@
+{
+  "name": "drupal/blog_vue",
+  "type": "drupal-custom-module",
+  "description": "Vue.js integration",
+  "require": {
+    "npm-asset/vue": "^2"
+  }
+}

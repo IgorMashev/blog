@@ -36,6 +36,10 @@ function blog_theme($existing, $type, $theme, $path) {
       ],
       'file' => 'blog.theme.inc',
     ],
+    'contact_message_feedback_form' => [
+      'render element' => 'form',
+      'file' => 'blog.theme.inc',
+    ],
   ];
 }
 
@@ -53,4 +57,11 @@ function blog_imagemagick_arguments_alter(ImagemagickExecArguments $arguments, $
  */
 function blog_query_entity_query_random_alter(AlterableInterface $query) {
   $query->orderRandom();
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function blog_preprocess_toolbar(&$variables) {
+  $variables['#attached']['library'][] = 'blog/toolbar';
 }

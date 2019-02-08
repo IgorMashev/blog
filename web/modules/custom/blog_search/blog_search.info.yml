@@ -1,0 +1,8 @@
+name: Blog search
+type: module
+description: Search helpers
+package: blog
+core: 8.x
+dependencies:
+  - search_api:search_api
+  - restui:restui

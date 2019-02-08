@@ -1,0 +1,3 @@
+access blog admin page:
+  title: 'Access blog admin pages'
+  restrict access: true

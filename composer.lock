@@ -5484,6 +5484,20 @@
             ]
         },
         {
+            "name": "npm-asset/vue",
+            "version": "2.6.3",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue/-/vue-2.6.3.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
             "name": "oomphinc/composer-installers-extender",
             "version": "v1.1.2",
             "source": {

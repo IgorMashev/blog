@@ -52,9 +52,9 @@ function template_preprocess_blog_previous_next(&$variables) {
 }
 
 /**
- * Implements hook_template_preprocess_default_variables_alter() for blog-label-with-icon-media-formatter.html.twig
+ * Implements template_preprocess_default_variables_alter() for blog-label-with-icon-media-formatter.html.twig
  */
-function blog_template_preprocess_blog_label_with_icon_media_formatter(array &$variables) {
+function template_preprocess_blog_label_with_icon_media_formatter(array &$variables) {
   $mime_type = $variables['mime_type'];
 
   $mime_association = [

@@ -1,0 +1,15 @@
+blog.admin:
+  path: '/admin/blog'
+  defaults:
+    _comtroller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Blog'
+  requirements:
+    _permission: 'access blog admin page'
+
+blog.availability_settings:
+  path: '/admin/blog/availability'
+  defaults:
+    _title: 'Availability settings'
+    _form: 'Drupal\blog\Form\AvailabilitySettingsForm'
+  requirements:
+    _permission: 'access blog admin page'

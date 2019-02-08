@@ -36,17 +36,28 @@ function blogger_preprocess_page__front(array &$variables) {
   $media_background = $media_storege->load('22');
   $media_avatar = $media_storege->load('21');
 
-  $variables['search_image_uri'] = $media_image->get('field_media_image')
-    ->entity->getFileUri();
+  if ($media_image instanceof MediaInterface) {
+    $variables['search_image_uri'] = $media_image->get('field_media_image')
+      ->entity->getFileUri();
+  }
 
-  $variables['search_video_uri'] = $media_video->get('field_media_video_file')
-    ->entity->getFileUri();
 
-  $variables['author_background'] = $media_background->get('field_media_image')
-    ->entity->getFileUri();
+  if ($media_video instanceof MediaInterface) {
+    $variables['search_video_uri'] = $media_video->get('field_media_video_file')
+      ->entity->getFileUri();
+  }
 
-  $variables['author_avatar'] = $media_avatar->get('field_media_image')
-    ->entity->getFileUri();
+
+  if ($media_background instanceof MediaInterface) {
+    $variables['author_background'] = $media_background->get('field_media_image')
+      ->entity->getFileUri();
+  }
+
+  if ($media_avatar instanceof MediaInterface) {
+    $variables['author_avatar'] = $media_avatar->get('field_media_image')
+      ->entity->getFileUri();
+  }
+
 }
 
 /**
@@ -101,7 +112,9 @@ function blogger_preprocess_page__about(array &$variables) {
 
   /** @var \Drupal\media\MediaInterface $media_image */
   $media_image = $media_storage->load(15);
-  $variables['about_image_uri'] = $media_image->get('field_media_image')
-    ->entity
-    ->getFileUri();
+  if ($media_image instanceof MediaInterface) {
+    $variables['about_image_uri'] = $media_image->get('field_media_image')
+      ->entity
+      ->getFileUri();
+  }
 }

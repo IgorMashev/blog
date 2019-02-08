@@ -1,0 +1,9 @@
+vuejs:
+  remote: https://vuejs.org
+  version: 2.5.21
+  license:
+    name: MIT
+    url: https://github.com/vuejs/vue/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/vue/dist/vue.js: {}

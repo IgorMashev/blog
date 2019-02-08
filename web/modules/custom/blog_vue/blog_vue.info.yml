@@ -1,0 +1,7 @@
+name: Blog - vue.js
+type: module
+description: Blog
+package: Blog
+core: 8.x
+dependencies:
+  - blog_search:blog_search

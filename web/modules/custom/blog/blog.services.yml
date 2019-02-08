@@ -4,3 +4,9 @@ services:
     arguments: ['@session_manager']
     tags:
       - { name: event_subscriber }
+
+  blog.twig_extension:
+    class: Drupal\blog\Service\BlogTwigExtension
+    arguments: ['@config.factory']
+    tags:
+      - { name: twig.extension }
