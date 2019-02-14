@@ -11,7 +11,7 @@ use Drupal\media\MediaInterface;
  * @BlogHeroPath(
  *   id = "blog_blog",
  *   match_type = "listed",
- *   match_path = {"<front>", "/blog"}
+ *   match_path = {"/blog"}
  *  )
  */
 class BlogBlog extends BlogHeroPathPluginBase {

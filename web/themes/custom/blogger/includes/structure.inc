@@ -30,11 +30,12 @@ function blogger_preprocess_page(array &$variables) {
 }
 
 function blogger_preprocess_page__front(array &$variables) {
-  $media_storege = \Drupal::entityTypeManager()->getStorage('media');
-  $media_image = $media_storege->load('15');
-  $media_video = $media_storege->load('14');
-  $media_background = $media_storege->load('22');
-  $media_avatar = $media_storege->load('21');
+  $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+  $media_id = \Drupal::config('blog_hero.settings');
+  $media_image = $media_storage->load((int)$media_id->get('front_image'));
+  $media_video = $media_storage->load((int)$media_id->get('front_video'));
+  $media_background = $media_storage->load((int)$media_id->get('front_background_image'));
+  $media_avatar = $media_storage->load((int)$media_id->get('front_avatar'));
 
   if ($media_image instanceof MediaInterface) {
     $variables['search_image_uri'] = $media_image->get('field_media_image')

@@ -1,0 +1,4 @@
+blog_hero.settings:
+  title: 'Blog hero settings'
+  parent: blog.admin
+  route_name: blog_hero.settings

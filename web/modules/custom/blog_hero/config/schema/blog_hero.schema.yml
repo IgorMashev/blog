@@ -1,0 +1,22 @@
+blog_hero.settings:
+  type: mapping
+  label: 'Blog hero settings'
+  mapping:
+    front_image:
+      type: string
+      label: 'Front image'
+    front_video:
+      type: string
+      label: 'Front video'
+    front_background_image:
+      type: string
+      label: 'Front background image'
+    front_avatar:
+      type: string
+      label: 'Front avatar'
+    blog_image:
+      type: string
+      label: 'Blog image'
+    blog_video:
+        type: string
+        label: 'Blog video'

@@ -1,0 +1,7 @@
+blog_hero.settings:
+  path: '/admin/blog/blog_hero_settings'
+  defaults:
+    _form: '\Drupal\blog_hero\Form\BlogHeroForm'
+    _title: 'Blog Hero settings'
+  requirements:
+    _permission: 'administer site configuration'
