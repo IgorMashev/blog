@@ -1,7 +1,7 @@
-name: Blog - vue.js
+name: BLOG - Vue.js
 type: module
-description: Blog
-package: Blog
+description: Vue.js integration.
+package: blog
 core: 8.x
 dependencies:
   - blog_search:blog_search

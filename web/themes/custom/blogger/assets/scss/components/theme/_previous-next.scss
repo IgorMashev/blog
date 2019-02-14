@@ -4,9 +4,24 @@
   justify-content: space-between;
   margin-bottom: gap(3);
 
-  &__previous,
-  &__next {
-    width: 47%;
+  @include media-breakpoint-up(lg) {
+    &__previous,
+    &__next {
+      width: 47%;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    flex-flow: wrap;
+
+    &__previous,
+    &__next {
+      width: 100%;
+    }
+
+    &__previous {
+      margin-bottom: gap(2);
+    }
   }
 }
 
@@ -83,7 +98,6 @@
         content: ', ';
         display: inline;
       }
-
     }
   }
 }

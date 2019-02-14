@@ -1,10 +1,14 @@
 .form-comment-comment-form {
-  &__author {
-    display: flex;
-    justify-content: space-between;
 
-    .form-item {
-      width: 32%;
+
+  @include media-breakpoint-up(md) {
+    &__author {
+      display: flex;
+      justify-content: space-between;
+
+      .form-item {
+        width: 32%;
+      }
     }
   }
 }

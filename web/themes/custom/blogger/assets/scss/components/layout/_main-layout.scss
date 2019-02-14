@@ -12,13 +12,25 @@
     border-radius: 5px;
   }
 
-  &--sidebar-first {
-    .region-content {
-      lost-column: 9/12;
-    }
+  @include media-breakpoint-up(lg) {
 
-    .region-sidebar-first {
-      lost-column: 3/12;
+    &--sidebar-first {
+      .region-content {
+        lost-column: 9/12;
+      }
+
+      .region-sidebar-first {
+        lost-column: 3/12;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    padding-left: unset;
+    padding-right: unset;
+
+    &__inner {
+      margin-top: unset;
     }
   }
 }

@@ -22,4 +22,15 @@
     margin: gap(2);
   }
 
+  @include media-breakpoint-up(md) {
+    pre code {
+      font-size: 14px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    pre code {
+      font-size: 14px;
+    }
+  }
 }

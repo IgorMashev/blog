@@ -13,6 +13,8 @@
   }
 
   &__field-attachments {
+    display: flex;
+    justify-content: center;
     margin-left: gap(-3);
     margin-right: gap(-3);
     padding: gap(3);
@@ -32,10 +34,6 @@
     lost-flex-container: row;
   }
 
-  &__field-attachments-item {
-    lost-waffle: 4/12 3;
-  }
-
   .blog-content-blog-related-posts {
     margin-bottom: gap(3);
   }
@@ -52,7 +50,6 @@
       background: white;
       position: relative;
       z-index: 10;
-      padding: 0 gap(2);
     }
 
     &::before {
@@ -70,11 +67,6 @@
   &__field-comments-content {
     margin-bottom: gap(3);
 
-    .indented {
-      margin-left: gap(6);
-      margin-bottom: gap(6);
-    }
-
     .comment-comment-full {
       margin-bottom: gap(3);
       padding-bottom: gap(3);
@@ -83,4 +75,52 @@
 
   }
 
+  &__field-comments-content > .comment-comment-full {
+    &:last-child {
+      border-bottom: unset;
+      margin-bottom: unset;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__field-attachment-item {
+      lost-waffle: 4/12 3 gap();
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+
+    &__field-comments-title,
+    &__field-comments-form-title {
+      span {
+        padding: 0 gap(2);
+      }
+    }
+
+    .indented {
+      margin-left: gap(6);
+      margin-bottom: gap(6);
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    &__field-attachment-item {
+      lost-waffle: 6/12 2 gap();
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__field-attachment-item {
+      width: 100%;
+    }
+
+    .indented {
+      margin-left: gap(3);
+      margin-bottom: gap(3);
+
+      > .indented {
+        margin-left: gap(3);
+      }
+    }
+  }
 }

@@ -12,4 +12,11 @@
   &__block-system-branding-block {
     margin-right: 30px;
   }
+
+  @include media-breakpoint-down(md) {
+
+    &__top {
+      display: none;
+    }
+  }
 }

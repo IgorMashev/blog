@@ -1,3 +1,4 @@
+{{ attach_library('blog_vue/main') }}
 {% set bem_block = 'frontpage' %}
 <main class="{{ bem_block }}">
     <div class="{{ bem_block }}__welcome">
@@ -16,10 +17,12 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at aut cumque deserunt
                         distinctio harum ipsa necessitatibus placeat recusandae veniam.</p>
                 </div>
-                <div class="{{ bem_block }}__search">
-                    <input type="text" autocomplete="off" class="{{ bem_block }}__search-input" placeholder="Search">
-                    <button class="{{ bem_block }}__search-submit">Search</button>
-                </div>
+
+                <div id="frontpage-global-search"> </div>
+                {#<div class="{{ bem_block }}__search">#}
+                    {#<input type="text" autocomplete="off" class="{{ bem_block }}__search-input" placeholder="Search">#}
+                    {#<button class="{{ bem_block }}__search-submit">Search</button>#}
+                {#</div>#}
             </div>
         </div>
     </div>

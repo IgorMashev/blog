@@ -1,0 +1,9 @@
+.paragraph-image {
+  @include media-breakpoint-only(xs) {
+    &__field-image {
+      margin-left: gap(-3);
+      margin-right: gap(-3);
+    }
+  }
+}
+

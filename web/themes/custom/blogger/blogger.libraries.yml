@@ -26,6 +26,12 @@ google.fonts:
     theme:
       //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic: { type: external, minified: true }
 
+mobile_menu:
+  js:
+    assets/js/mobile-menu.js: {}
+  dependencies:
+    - core/drupal
+
 paragraph.code:
   js:
     assets/js/paragraph-code.js: {}

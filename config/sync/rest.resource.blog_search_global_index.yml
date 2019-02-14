@@ -1,0 +1,18 @@
+uuid: a8e68273-1e41-4d1b-896e-348692374add
+langcode: en
+status: true
+dependencies:
+  module:
+    - blog_search
+    - serialization
+    - user
+id: blog_search_global_index
+plugin_id: blog_search_global_index
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

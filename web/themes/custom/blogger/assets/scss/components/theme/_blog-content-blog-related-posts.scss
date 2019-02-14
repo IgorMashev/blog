@@ -13,7 +13,6 @@
       background: white;
       position: relative;
       z-index: 10;
-      padding: 0 gap(2);
     }
 
     &::before {
@@ -33,7 +32,22 @@
     lost-flex-container: row;
   }
 
-  &__item {
-    lost-waffle: 3/12 4;
+
+  @include media-breakpoint-up(md) {
+    &__item {
+      lost-waffle: 3/12 4;
+    }
+
+    &__title {
+      span {
+        padding: 0 gap(2);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__item {
+      lost-waffle: 6/12 2;
+    }
   }
 }

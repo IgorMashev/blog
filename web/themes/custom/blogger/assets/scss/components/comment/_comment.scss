@@ -32,6 +32,7 @@ $avatar-width: 40px;
       @include gradient-y(rgba(white, 0.3), rgba(black, 0.3));
       content: '';
       position: absolute;
+
       top: 0;
       right: 0;
       bottom: 0;
@@ -120,11 +121,9 @@ $avatar-width: 40px;
 
   }
 
-
-
-  //&:last-child {
-  //  margin-bottom: unset;
-  //  padding-bottom: unset;
-  //  border-bottom: unset;
-  //}
+  @include media-breakpoint-down(sm) {
+    &__comment-body {
+      font-size: 15px;
+    }
+  }
 }

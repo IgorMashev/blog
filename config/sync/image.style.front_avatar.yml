@@ -1,0 +1,15 @@
+uuid: 0b49e9b0-28d9-4a7c-93f3-49cd2ef050b8
+langcode: en
+status: true
+dependencies: {  }
+name: front_avatar
+label: 'Front Avatar'
+effects:
+  63884189-b8f1-41be-847e-3ed95abe3d8c:
+    uuid: 63884189-b8f1-41be-847e-3ed95abe3d8c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 220
+      height: 220
+      anchor: center-center

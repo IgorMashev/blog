@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "rollup-plugin-node-globals": "^1.4.0"
+  }
+}

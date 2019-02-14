@@ -1,0 +1,15 @@
+uuid: 536133f1-2c5c-418b-992b-0915095a2ec1
+langcode: en
+status: true
+dependencies: {  }
+name: main_background
+label: 'Main Background'
+effects:
+  5ec0ac3c-f0b4-4cc2-bccd-371e3749ed83:
+    uuid: 5ec0ac3c-f0b4-4cc2-bccd-371e3749ed83
+    id: image_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 500
+      anchor: center-center

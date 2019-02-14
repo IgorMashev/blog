@@ -1,0 +1,130 @@
+uuid: 9ed9c78e-d53f-4cd1-a825-b1efee52f8a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - search_api
+    - snowball_stemmer
+  config:
+    - search_api.server.database
+    - core.entity_view_mode.node.search_index
+id: global
+name: Global
+description: ''
+read_only: false
+field_settings:
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  promote:
+    label: 'Promoted to front page'
+    datasource_id: 'entity:node'
+    property_path: promote
+    type: boolean
+    dependencies:
+      module:
+        - node
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          page: search_index
+        'entity:taxonomy_term':
+          taxonomy_term: ''
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  title_1:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 3
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - blog
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - rendered_item
+      - title
+      - title_1
+    weights:
+      preprocess_index: -47
+      preprocess_query: -20
+  rendered_item: {  }
+  snowball_stemmer:
+    all_fields: 1
+    fields:
+      - rendered_item
+      - title_1
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: -49
+      preprocess_query: 0
+  tokenizer:
+    all_fields: true
+    fields:
+      - rendered_item
+      - title_1
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -50
+      preprocess_query: -6
+  transliteration:
+    all_fields: true
+    fields:
+      - rendered_item
+      - title
+      - title_1
+    weights:
+      preprocess_index: -46
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: database

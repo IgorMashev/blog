@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.full
     - field.field.node.blog.body
     - field.field.node.blog.field_attachments
     - field.field.node.blog.field_comments
@@ -12,57 +11,32 @@ dependencies:
     - field.field.node.blog.field_tags
     - node.type.blog
   module:
-    - blog
-    - comment
-    - entity_reference_revisions
+    - text
     - user
 id: node.blog.default
 targetEntityType: node
 bundle: blog
 mode: default
 content:
-  field_attachments:
-    type: blog_label_with_icon
-    weight: 2
+  body:
+    type: text_default
+    weight: 0
     region: content
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-  field_comments:
-    weight: 3
-    label: above
-    settings:
-      view_mode: full
-      pager_id: 0
-    third_party_settings: {  }
-    type: comment_default
-    region: content
-  field_content:
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
-  field_tags:
-    weight: 0
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   previous_next:
     weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
   estimated_read_time: true
+  field_attachments: true
+  field_comments: true
+  field_content: true
   field_promo_image: true
+  field_tags: true
   links: true
   previous_next_blog: true
   random_posts: true

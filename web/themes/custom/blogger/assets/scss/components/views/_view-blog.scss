@@ -3,8 +3,16 @@
     lost-flex-container: row;
   }
 
-  &__row {
-    lost-waffle: 4/12 3;
+  @include media-breakpoint-up(md) {
+    &__row {
+      lost-waffle: 4/12 3;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__row {
+      lost-waffle: 6/12 2;
+    }
   }
 }
 
@@ -13,7 +21,21 @@
     lost-flex-container: row;
   }
 
-  &__row {
-    lost-waffle: 4/12 3;
+  @include media-breakpoint-up(lg) {
+    &__row {
+      lost-waffle: 3/12 4;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    &__row {
+      lost-waffle: 4/12 3;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__row {
+      lost-waffle: 6/12 2;
+    }
   }
 }

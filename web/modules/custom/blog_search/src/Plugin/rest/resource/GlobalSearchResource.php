@@ -65,12 +65,12 @@ class GlobalSearchResource extends ResourceBase implements DependentPluginInterf
     LoggerInterface $logger,
     Request $request,
     EntityTypeManagerInterface $entity_type_manager,
-    ParseModePluginManager $parse_mode_plugin_panager) {
+    ParseModePluginManager $parse_mode_plugin_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
 
     $this->request = $request;
     $this->indexStorage = $entity_type_manager->getStorage('search_api_index');
-    $this->parseModeManager = $parse_mode_plugin_panager;
+    $this->parseModeManager = $parse_mode_plugin_manager;
   }
 
   /**

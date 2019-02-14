@@ -82,7 +82,7 @@ AddEncoding gzip svgz
 
   # Block access to "hidden" directories whose names begin with a period. This
   # includes directories used by version control systems such as Subversion or
-  # Git to store control files. Files whose names begin with a period, as well
+  # Git to storage control files. Files whose names begin with a period, as well
   # as the control files used by CVS, are protected by the FilesMatch directive
   # above.
   #

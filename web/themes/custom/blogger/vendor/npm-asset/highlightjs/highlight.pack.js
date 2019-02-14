@@ -1776,7 +1776,7 @@ hljs.registerLanguage('applescript', function(hljs) {
           'mount volume|path to|(close|open for) access|(get|set) eof|' +
           'current date|do shell script|get volume settings|random number|' +
           'set volume|system attribute|system info|time to GMT|' +
-          '(load|run|store) script|scripting components|' +
+          '(load|run|storage) script|scripting components|' +
           'ASCII (character|number)|localized string|' +
           'choose (application|color|file|file name|' +
           'folder|from list|remote application|URL)|' +
@@ -9412,7 +9412,7 @@ hljs.registerLanguage('llvm', function(hljs) {
       'sitofp fptoui fptosi inttoptr ptrtoint bitcast ' +
       'addrspacecast select va_arg ret br switch invoke ' +
       'unwind unreachable indirectbr landingpad resume ' +
-      'malloc alloca free load store getelementptr ' +
+      'malloc alloca free load storage getelementptr ' +
       'extractelement insertelement shufflevector getresult ' +
       'extractvalue insertvalue atomicrmw cmpxchg fence ' +
       'argmemonly double',
@@ -14375,7 +14375,7 @@ hljs.registerLanguage('sql', function(hljs) {
             'standby start starting startup statement static statistics stats_binomial_test stats_crosstab ' +
             'stats_ks_test stats_mode stats_mw_test stats_one_way_anova stats_t_test_ stats_t_test_indep ' +
             'stats_t_test_one stats_t_test_paired stats_wsr_test status std stddev stddev_pop stddev_samp stdev ' +
-            'stop storage store stored str str_to_date straight_join strcmp strict string struct stuff style subdate ' +
+            'stop storage storage stored str str_to_date straight_join strcmp strict string struct stuff style subdate ' +
             'subpartition subpartitions substitutable substr substring subtime subtring_index subtype success sum ' +
             'suspend switch switchoffset switchover sync synchronous synonym sys sys_xmlagg sysasm sysaux sysdate ' +
             'sysdatetimeoffset sysdba sysoper system system_user sysutcdatetime table tables tablespace tan tdo ' +

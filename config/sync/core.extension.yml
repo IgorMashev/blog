@@ -15,7 +15,9 @@ module:
   blog_content_blog: 0
   blog_hero: 0
   blog_paragraphs: 0
+  blog_search: 0
   blog_taxonomy: 0
+  blog_vue: 0
   breakpoint: 0
   ckeditor: 0
   codemirror_editor: 0
@@ -65,11 +67,16 @@ module:
   quickedit: 0
   rdf: 0
   redirect: 0
+  rest: 0
+  restui: 0
   robotstxt: 0
   scheduler: 0
-  search: 0
+  search_api: 0
+  search_api_db: 0
+  serialization: 0
   shortcut: 0
   snippet_manager: 0
+  snowball_stemmer: 0
   swiftmailer: 0
   system: 0
   taxonomy: 0

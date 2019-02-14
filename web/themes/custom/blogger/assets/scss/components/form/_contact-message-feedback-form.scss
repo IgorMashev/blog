@@ -10,8 +10,11 @@
     lost-flex-container: row;
   }
 
-  &__name,
-  &__mail {
-    lost-column: 6/12 2;
+  @include media-breakpoint-up(md) {
+
+    &__name,
+    &__mail {
+      lost-column: 6/12 2;
+    }
   }
 }

@@ -1,0 +1,8 @@
+uuid: 3fcb9a10-6194-4f03-a1a8-6633914b427b
+langcode: en
+status: true
+dependencies: {  }
+id: mobile
+label: Mobile
+description: ''
+locked: false
